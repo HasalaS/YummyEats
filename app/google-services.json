@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "470884873134",
+    "firebase_url": "https://yummyeats-85b04.firebaseio.com",
+    "project_id": "yummyeats-85b04",
+    "storage_bucket": "yummyeats-85b04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470884873134:android:0397142183008505",
+        "android_client_info": {
+          "package_name": "lk.sliit.yummyeats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470884873134-c29h4a3pi5hdtn2dfg36tttnamsq1g8a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lk.sliit.yummyeats",
+            "certificate_hash": "138b14e4f736d54e5b107669bc0ecd90d545a8b9"
+          }
+        },
+        {
+          "client_id": "470884873134-5g19l37sjejk0g19bhoelvv9esstobhi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCswmu9v3g4Fxq03U_0UJj9X0wGohuyR58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470884873134-5g19l37sjejk0g19bhoelvv9esstobhi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
