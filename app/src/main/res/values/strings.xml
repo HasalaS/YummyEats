@@ -15,8 +15,10 @@
     <string name="menu_send">Send</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="tab_text_1">Customer</string>
-    <string name="tab_text_2">Deliverer</string>
+    <string name="tab_text_2">Delivery</string>
     <string name="tab_text_3">Restaurant</string>
 
     <string name="register">Register</string>
+    <string name="title_activity_restaurant_main">RestaurantMainActivity</string>
+    <string name="title_activity_delivery_main">DeliveryMainActivity</string>
 </resources>

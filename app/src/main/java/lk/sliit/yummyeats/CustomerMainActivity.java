@@ -1,13 +1,15 @@
 package lk.sliit.yummyeats;
 
 import lk.sliit.yummyeats.Registration.*;
+import lk.sliit.yummyeats.ui.main.CustomPageAdapter;
+import lk.sliit.yummyeats.ui.main.SectionsPagerAdapter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -16,11 +18,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
+public class CustomerMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -37,6 +36,19 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+
+        CustomPageAdapter adapter = new CustomPageAdapter(getSupportFragmentManager());
+        adapter.AddFragment(new HomeFoodActivity(), "Foods");
+        adapter.AddFragment(new HomeBeverageActivity(), "Beverages");
+
+        viewPager.setAdapter(adapter);
+        tabs.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -66,8 +78,12 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_gallery) {
+            Intent intent = new Intent(this, RestaurantMainActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(this, DeliveryMainActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_tools) {
 
@@ -83,7 +99,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void go(View view){
-        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+        Intent intent = new Intent(CustomerMainActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
 

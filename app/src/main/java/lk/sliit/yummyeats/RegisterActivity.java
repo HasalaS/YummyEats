@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import lk.sliit.yummyeats.Registration.CustomerRegistrationActivity;
 import lk.sliit.yummyeats.Registration.DelivererRegistrationActivity;
 import lk.sliit.yummyeats.Registration.RestaurantsRegistrationActivity;
-import lk.sliit.yummyeats.ui.main.RegistrationPageAdapter;
+import lk.sliit.yummyeats.ui.main.CustomPageAdapter;
 import lk.sliit.yummyeats.ui.main.SectionsPagerAdapter;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -23,9 +23,9 @@ public class RegisterActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
-        RegistrationPageAdapter adapter = new RegistrationPageAdapter(getSupportFragmentManager());
+        CustomPageAdapter adapter = new CustomPageAdapter(getSupportFragmentManager());
         adapter.AddFragment(new CustomerRegistrationActivity(), "Customer");
-        adapter.AddFragment(new DelivererRegistrationActivity(), "Deliverer");
+        adapter.AddFragment(new DelivererRegistrationActivity(), "Delivery");
         adapter.AddFragment(new RestaurantsRegistrationActivity(), "Restaurant");
 
         viewPager.setAdapter(adapter);

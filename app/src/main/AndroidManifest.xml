@@ -9,12 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".FoodRegistrationActivity"></activity>
+        <activity android:name=".DeliveryProfileActivity" />
+        <activity android:name=".CustomerProfileActivity" />
+        <activity android:name=".RestaurantProfileActivity" />
+        <activity
+            android:name=".DeliveryMainActivity"
+            android:label="@string/title_activity_delivery_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RestaurantMainActivity"
+            android:label="@string/title_activity_restaurant_main"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CustomerMainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
