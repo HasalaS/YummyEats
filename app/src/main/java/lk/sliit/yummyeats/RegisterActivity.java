@@ -1,5 +1,6 @@
 package lk.sliit.yummyeats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -31,5 +32,15 @@ public class RegisterActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         tabs.setupWithViewPager(viewPager);
 
+    }
+
+    public void cus_signin(){
+        Intent intent = new Intent(this, CustomerMainActivity.class);
+        startActivity(intent);
+    }
+
+    public void cus_signup(){
+        Intent intent = new Intent(this, CustomerMainActivity.class);
+        startActivity(intent);
     }
 }
