@@ -42,12 +42,13 @@
     </LinearLayout>
 
 
-    <View
-        android:layout_margin="@dimen/appbar_padding"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorSecondaryText" />
-
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="@dimen/text_level_1"
+        android:layout_margin="@dimen/appbar_padding"/>
 
     <ScrollView
         android:layout_width="match_parent"
