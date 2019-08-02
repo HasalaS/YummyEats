@@ -89,6 +89,8 @@ public class CustomerMainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_tools) {
+            Intent intent = new Intent(this, FoodProfileActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_share) {
 
