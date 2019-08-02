@@ -1,5 +1,6 @@
 package lk.sliit.yummyeats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -78,18 +79,16 @@ public class DeliveryMainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.delivery_nav_home) {
+            
+        } else if (id == R.id.delivery_nav_profile) {
+            Intent intent1=new Intent(DeliveryMainActivity.this, DeliveryProfileActivity.class);
+            startActivity(intent1);
+            finish();
+        } else if (id == R.id.delivery_nav_settings) {
+            Intent intent2 = new Intent(DeliveryMainActivity.this, SettingsActivity.class);
+            startActivity(intent2);
+            finish();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
