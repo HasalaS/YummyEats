@@ -80,9 +80,7 @@ public class DeliveryMainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.delivery_nav_home) {
-            Intent intent = new Intent();
-            startActivity(intent);
-            finish();
+            
         } else if (id == R.id.delivery_nav_profile) {
             Intent intent1=new Intent(DeliveryMainActivity.this, DeliveryProfileActivity.class);
             startActivity(intent1);
