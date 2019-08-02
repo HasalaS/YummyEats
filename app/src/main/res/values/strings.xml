@@ -21,4 +21,19 @@
     <string name="register">Register</string>
     <string name="title_activity_restaurant_main">RestaurantMainActivity</string>
     <string name="title_activity_delivery_main">DeliveryMainActivity</string>
+    <string name="btn_sign_up_text">Sign Up</string>
+    <string name="btn_sign_in_text">Sign In</string>
+
+    <string name="Reg_delivery_description">Foods To Your Door Step.</string>
+    <string name="Reg_restaurent_description">Anything You Wish,We Have It. </string>
+    <string name="Reg_customer_description">Keep Calm and Order Food.</string>
+
+    <string name="Reg_full_name">Full Name</string>
+    <string name="Reg_phone_number">Phone Number</string>
+    <string name="Reg_address">Address</string>
+    <string name="Reg_email">Email</string>
+    <string name="Reg_vehicle">Vehicle Number</string>
+
+
+
 </resources>

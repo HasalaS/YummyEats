@@ -7,8 +7,6 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -32,7 +30,7 @@
                 android:paddingHorizontal="@dimen/activity_horizontal_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ext messaging, or texting, is the act"/>
+                android:text="@string/Reg_delivery_description"/>
 
         </LinearLayout>
 
@@ -49,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
-                android:hint="Full Name"
+                android:hint="@string/Reg_full_name"
                 android:textSize="@dimen/text_level_3"/>
 
             <EditText
@@ -58,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
-                android:hint="Phone Number"
+                android:hint="@string/Reg_phone_number"
                 android:textSize="@dimen/text_level_3"/>
 
             <EditText
@@ -67,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
-                android:hint="Email"
+                android:hint="@string/Reg_email"
                 android:textSize="@dimen/text_level_3"/>
 
             <EditText
@@ -76,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
-                android:hint="Vehicle Number"
+                android:hint="@string/Reg_vehicle"
                 android:textSize="@dimen/text_level_3"/>
 
             <LinearLayout
@@ -91,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_secondary_style"
                     android:textColor="@color/colorAccent"
-                    android:text="SignIn"
+                    android:text="@string/btn_sign_in_text"
                     android:layout_marginRight="2dp"/>
 
                 <Button
@@ -101,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_primary_style"
                     android:textColor="@color/colorPrimary"
-                    android:text="SignUp"
+                    android:text="@string/btn_sign_up_text"
                     android:layout_marginLeft="2dp"/>
 
             </LinearLayout>
