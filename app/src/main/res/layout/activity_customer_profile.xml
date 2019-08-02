@@ -168,14 +168,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Name"
+                            android:text="Email"
                             android:textSize="16sp"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
+                            android:text="amandacerny@gmail.com"
                             android:textSize="18sp"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -230,14 +230,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Name"
+                            android:text="Contact No"
                             android:textSize="16sp"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
+                            android:text="0785236412"
                             android:textSize="18sp"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -292,200 +292,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Name"
+                            android:text="Address"
                             android:textSize="16sp"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
-                            android:textSize="18sp"
-                            android:textColor="@color/colorPrimaryText"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardElevation="1dp"
-                app:cardCornerRadius="0dp"
-                app:cardUseCompatPadding="true">
-
-                <!-- details container-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingVertical="@dimen/appbar_padding">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:paddingLeft="25dp"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_gravity="center"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0.5dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorSecondaryText" />
-
-                    <!-- Text container-->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="4"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Name"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorSecondaryText"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
-                            android:textSize="18sp"
-                            android:textColor="@color/colorPrimaryText"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardElevation="1dp"
-                app:cardCornerRadius="0dp"
-                app:cardUseCompatPadding="true">
-
-                <!-- details container-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingVertical="@dimen/appbar_padding">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:paddingLeft="25dp"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_gravity="center"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0.5dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorSecondaryText" />
-
-                    <!-- Text container-->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="4"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Name"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorSecondaryText"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
-                            android:textSize="18sp"
-                            android:textColor="@color/colorPrimaryText"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardElevation="1dp"
-                app:cardCornerRadius="0dp"
-                app:cardUseCompatPadding="true">
-
-                <!-- details container-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingVertical="@dimen/appbar_padding">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:paddingLeft="25dp"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_gravity="center"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0.5dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorSecondaryText" />
-
-                    <!-- Text container-->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="4"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Name"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorSecondaryText"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
+                            android:text="NewYork"
                             android:textSize="18sp"
                             android:textColor="@color/colorPrimaryText"/>
 

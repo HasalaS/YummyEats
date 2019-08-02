@@ -26,6 +26,7 @@ public class CustomerMainActivity extends AppCompatActivity
 
         Intent intent = new Intent(CustomerMainActivity.this, LoginActivity.class);
         startActivity(intent);
+        finish();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
