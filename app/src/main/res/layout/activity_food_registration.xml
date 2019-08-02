@@ -1,11 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+tools:context=".FoodRegistrationActivity">
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FoodRegistrationActivity"
+    android:layout_height="wrap_content"
+    tools:context=".ui.main.PlaceholderFragment"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_marginVertical="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add new food"
+        android:textSize="@dimen/text_level_1"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/nav_header_vertical_spacing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:hint="Name"
+            android:textSize="@dimen/text_level_3"/>
+
+        <EditText
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:hint="Description"
+            android:textSize="@dimen/text_level_3"/>
+
+        <EditText
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:hint="Price"
+            android:textSize="@dimen/text_level_3"/>
+
+
+
+        <LinearLayout
+            android:layout_marginVertical="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_marginVertical="@dimen/btn_text"
+                android:textSize="@dimen/text_level_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_secondary_style"
+                android:textColor="@color/colorAccent"
+                android:text="Upload an image"
+                android:layout_marginLeft="2dp"/>
+
+            <Button
+                android:textSize="@dimen/text_level_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_primary_style"
+                android:textColor="@color/colorPrimary"
+                android:text="Add Food"
+                android:layout_marginLeft="2dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 </LinearLayout>
+
+</ScrollView>
+

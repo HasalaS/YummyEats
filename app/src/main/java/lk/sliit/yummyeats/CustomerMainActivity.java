@@ -1,6 +1,5 @@
 package lk.sliit.yummyeats;
 
-import lk.sliit.yummyeats.Registration.*;
 import lk.sliit.yummyeats.ui.main.CustomPageAdapter;
 import lk.sliit.yummyeats.ui.main.SectionsPagerAdapter;
 
@@ -24,8 +23,12 @@ public class CustomerMainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Intent intent = new Intent(CustomerMainActivity.this, LoginActivity.class);
+        startActivity(intent);
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_customer_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
