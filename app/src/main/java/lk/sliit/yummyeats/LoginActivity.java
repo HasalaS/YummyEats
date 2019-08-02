@@ -1,6 +1,7 @@
 package lk.sliit.yummyeats;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,6 +58,9 @@ public class LoginActivity extends AppCompatActivity {
                             Customer customer = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Customer.class);
                             if (customer.getPassword().equals(etPassword.getText().toString())) {
                                 Toast.makeText(LoginActivity.this, "Sign in as a customer successful", Toast.LENGTH_SHORT).show();
+                                Intent customerIntent = new Intent(LoginActivity.this, CustomerMainActivity.class);
+                                startActivity(customerIntent);
+                                finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Password Incorrect", Toast.LENGTH_SHORT).show();
                             }
@@ -71,6 +75,9 @@ public class LoginActivity extends AppCompatActivity {
                                         Deliver deliver = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Deliver.class);
                                         if(deliver.getPassword().equals(etPassword.getText().toString())){
                                             Toast.makeText(LoginActivity.this, "Sign in as a driver successful", Toast.LENGTH_SHORT).show();
+                                            Intent deliverIntent = new Intent(LoginActivity.this, DeliveryMainActivity.class);
+                                            startActivity(deliverIntent);
+                                            finish();
                                         } else {
                                             Toast.makeText(LoginActivity.this, "Password Incorrect", Toast.LENGTH_SHORT).show();
                                         }
@@ -83,12 +90,15 @@ public class LoginActivity extends AppCompatActivity {
                                                     mDialog.dismiss();
                                                     Restaurant restaurant = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Restaurant.class);
                                                     if(restaurant.getPassword().equals(etPassword.getText().toString())){
-                                                        Toast.makeText(LoginActivity.this, "Sign in as a restaurant successful", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
+                                                        Intent restaurantIntent = new Intent(LoginActivity.this, RestaurantMainActivity.class);
+                                                        startActivity(restaurantIntent);
+                                                        finish();
                                                     } else {
                                                         Toast.makeText(LoginActivity.this, "Password Incorrect", Toast.LENGTH_SHORT).show();
                                                     }
                                                 } else {
-                                                    Toast.makeText(LoginActivity.this, "Ehema ekek meke na", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(LoginActivity.this, "User doesn't exist! Please Sign Up", Toast.LENGTH_SHORT).show();
                                                 }
                                             }
 
