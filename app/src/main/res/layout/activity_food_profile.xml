@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".FoodProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/profile_first_layer_style">
 
         <ImageView
             android:layout_width="200dp"
@@ -19,11 +21,19 @@
             android:layout_gravity="center"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:text="Amanda Cerny"/>
+            android:text="Amanda Cerny"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="amandacerny@gmail.com"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
