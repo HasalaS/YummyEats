@@ -16,7 +16,7 @@
         android:backgroundTint="@color/colorAccent"
         android:background="@drawable/profile_first_layer_style">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/propic"
@@ -41,90 +41,13 @@
 
     </LinearLayout>
 
-    <LinearLayout
+
+    <View
+        android:layout_margin="@dimen/appbar_padding"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginVertical="@dimen/text_level_3"
-        android:elevation="100dp">
+        android:layout_height="1dp"
+        android:background="@color/colorSecondaryText" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="45"
-                android:textSize="@dimen/text_level_1"
-                android:textColor="@color/colorPrimaryText"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Orders"
-                android:textColor="@color/colorSecondaryText"/>
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/colorSecondaryText" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="45"
-                android:textSize="@dimen/text_level_1"
-                android:textColor="@color/colorPrimaryText"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Orders"
-                android:textColor="@color/colorSecondaryText"/>
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/colorSecondaryText" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="15"
-                android:textSize="@dimen/text_level_1"
-                android:textColor="@color/colorPrimaryText"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Orders"
-                android:textColor="@color/colorSecondaryText"/>
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -138,79 +61,81 @@
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardElevation="1dp"
-            app:cardCornerRadius="0dp"
-            app:cardUseCompatPadding="true">
-
-            <!-- details container-->
-            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="1dp"
+                app:cardCornerRadius="0dp"
+                app:cardUseCompatPadding="true">
 
+                <!-- details container-->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:paddingLeft="25dp"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_name"/>
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="0.5dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/colorSecondaryText" />
+                    android:paddingVertical="@dimen/appbar_padding">
 
-                <!-- Text container-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:paddingLeft="25dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_name"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorSecondaryText" />
+
+                    <!-- Text container-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/appbar_padding"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorSecondaryText"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Amanda Cerny"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorPrimaryText"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="1dp"
+                app:cardCornerRadius="0dp"
+                app:cardUseCompatPadding="true">
+
+                <!-- details container-->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingLeft="@dimen/appbar_padding"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="16sp"
-                        android:textColor="@color/colorSecondaryText"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Amanda Cerny"
-                        android:textSize="18sp"
-                        android:textColor="@color/colorPrimaryText"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardElevation="1dp"
-                app:cardCornerRadius="0dp"
-                app:cardUseCompatPadding="true">
-
-                <!-- details container-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:paddingVertical="@dimen/appbar_padding">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -271,7 +196,8 @@
                 <!-- details container-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingVertical="@dimen/appbar_padding">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -332,7 +258,8 @@
                 <!-- details container-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingVertical="@dimen/appbar_padding">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -393,7 +320,8 @@
                 <!-- details container-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingVertical="@dimen/appbar_padding">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -442,6 +370,67 @@
 
             </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="1dp"
+                app:cardCornerRadius="0dp"
+                app:cardUseCompatPadding="true">
+
+                <!-- details container-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="@dimen/appbar_padding">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:paddingLeft="25dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_name"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorSecondaryText" />
+
+                    <!-- Text container-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/appbar_padding"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorSecondaryText"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Amanda Cerny"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorPrimaryText"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
