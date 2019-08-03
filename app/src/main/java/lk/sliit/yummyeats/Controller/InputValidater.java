@@ -30,4 +30,11 @@ public class InputValidater {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(editText.getText().toString());
         return matcher.find();
     }
+
+    public boolean isValidMobile(EditText editText){
+        if(editText.getText().toString().length() == 10)
+            return true;
+        else
+            return false;
+    }
 }
