@@ -17,6 +17,7 @@ import lk.sliit.yummyeats.Controller.InputValidater;
 import lk.sliit.yummyeats.CustomerMainActivity;
 import lk.sliit.yummyeats.DeliveryMainActivity;
 import lk.sliit.yummyeats.LoginActivity;
+import lk.sliit.yummyeats.Model.Restaurant;
 import lk.sliit.yummyeats.R;
 import lk.sliit.yummyeats.RestaurantMainActivity;
 
@@ -92,7 +93,7 @@ public class RestaurantsRegistrationFragment extends Fragment implements View.On
                 }
 
                 else {
-                    Intent intent2 = new Intent(getActivity(), CustomerMainActivity.class);
+                    Intent intent2 = new Intent(getActivity(), RestaurantMainActivity.class);
                     startActivity(intent2);
                     getActivity().finish();
                     break;

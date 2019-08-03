@@ -73,6 +73,7 @@ public class DelivererRegistrationFragment extends Fragment implements View.OnCl
                     mBuilder.setView(mView);
                     AlertDialog dialog = mBuilder.create();
                     dialog.show();
+
                 } else if (!etRegisterDeliverConfirmPassword.getText().toString().equals(etRegisterDeliverConfirmPassword.getText().toString())) {
                     Toast.makeText(getActivity(), "Password Mismatched", Toast.LENGTH_SHORT).show();
 
