@@ -24,7 +24,7 @@ public class CustomerMainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Intent intent = new Intent(CustomerMainActivity.this, LoginActivity.class);
+        Intent intent = new Intent(CustomerMainActivity.this, RegisterActivity.class);
         startActivity(intent);
         finish();
 

@@ -79,7 +79,6 @@
 
                 <Button
                     android:id="@+id/btn_cus_signIn"
-                    android:onClick="cus_signin"
                     android:textSize="@dimen/text_level_3"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -91,7 +90,6 @@
 
                 <Button
                     android:id="@+id/btn_cus_signUp"
-                    android:onClick="cus_signup"
                     android:textSize="@dimen/text_level_3"
                     android:layout_width="0dp"
                     android:layout_weight="1"

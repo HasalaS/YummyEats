@@ -40,5 +40,7 @@
     <string name="delivery_side_bar_settings">Settings</string>
     <string name="settings_msg">Settings Page</string>
 
+    <string name="dialog_password_validation">Your password should have, at least eight characters and one or more of each of the following:\n\n\t• lower-case letter\n\t• upper-case letter\n\t• number\n\t• punctuation mark</string>
+
 
 </resources>
