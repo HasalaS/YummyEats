@@ -1,6 +1,7 @@
 package lk.sliit.yummyeats.Registration;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,10 +14,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import lk.sliit.yummyeats.Controller.InputValidater;
 import lk.sliit.yummyeats.CustomerMainActivity;
 import lk.sliit.yummyeats.DeliveryMainActivity;
 import lk.sliit.yummyeats.LoginActivity;
+import lk.sliit.yummyeats.Model.Deliver;
 import lk.sliit.yummyeats.Model.Restaurant;
 import lk.sliit.yummyeats.R;
 import lk.sliit.yummyeats.RestaurantMainActivity;
@@ -31,6 +39,10 @@ public class RestaurantsRegistrationFragment extends Fragment implements View.On
     EditText etRegisterRestaurantConfirmPassword;
 
     InputValidater inputValidater = new InputValidater();
+
+    //Init Firebase
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference table_restaurant = database.getReference("Restaurant");
 
     @Nullable
     @Override
@@ -91,13 +103,35 @@ public class RestaurantsRegistrationFragment extends Fragment implements View.On
                 else if(!etRegisterRestaurantPassword.getText().toString().equals(etRegisterRestaurantConfirmPassword.getText().toString())){
                     Toast.makeText(getActivity(), "Password Mismatched", Toast.LENGTH_SHORT).show();
                 }
-
-                else {
-                    Intent intent2 = new Intent(getActivity(), RestaurantMainActivity.class);
-                    startActivity(intent2);
-                    getActivity().finish();
-                    break;
+                else{
+                    // add to Firebase
+                    final ProgressDialog mDialog = new ProgressDialog(getActivity());
+                    mDialog.setMessage("Please wait...");
+                    mDialog.show();
+                    table_restaurant.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            //check weather already registered or not
+                            if (dataSnapshot.child(etRegisterRestaurantMobile.getText().toString()).exists()) {
+                                mDialog.dismiss();
+                                Toast.makeText(getActivity(), "Phone number has already registered", Toast.LENGTH_SHORT).show();
+                            } else {
+                                mDialog.dismiss();
+                                Restaurant restaurant = new Restaurant(etRegisterRestaurantMobile.getText().toString(), etRegisterRestaurantFullName.getText().toString(),
+                                        etRegisterRestaurantPassword.getText().toString(), etRegisterRestaurantAddress.getText().toString(), etRegisterRestaurantEmail.getText().toString());
+                                table_restaurant.child(restaurant.getMobile()).setValue(restaurant);
+                                Toast.makeText(getActivity(), "SignUp successful", Toast.LENGTH_SHORT).show();
+                                Intent intent2 = new Intent(getActivity(), RestaurantMainActivity.class);
+                                startActivity(intent2);
+                                getActivity().finish();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
                 }
+                break;
         }
     }
 }
