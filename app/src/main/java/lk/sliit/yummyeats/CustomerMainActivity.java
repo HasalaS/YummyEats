@@ -27,10 +27,6 @@ public class CustomerMainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Intent intent = new Intent(CustomerMainActivity.this, FoodRegistrationActivity.class);
-        startActivity(intent);
-        finish();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -59,12 +55,18 @@ public class CustomerMainActivity extends AppCompatActivity
     }
 
     boolean doubleBackToExitPressedOnce = false;
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
             this.doubleBackToExitPressedOnce = true;
             Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
 
@@ -72,7 +74,8 @@ public class CustomerMainActivity extends AppCompatActivity
 
                 @Override
                 public void run() {
-                    doubleBackToExitPressedOnce=false; }
+                    doubleBackToExitPressedOnce=false;
+                }
             }, 2000);
         }
     }

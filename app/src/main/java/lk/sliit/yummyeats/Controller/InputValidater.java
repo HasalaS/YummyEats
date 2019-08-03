@@ -12,12 +12,10 @@ public class InputValidater {
 
     public boolean isValidPassword(EditText editText){
         String textValue = editText.getText().toString();
-        if(textValue.matches(passwordPattern)){
+        if(textValue.matches(passwordPattern))
             return true;
-        } else {
-
+        else
             return false;
-        }
     }
 
     public boolean isValidEmail(EditText editText){
