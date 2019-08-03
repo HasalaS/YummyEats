@@ -122,7 +122,6 @@ public class CustomerRegistrationFragment extends Fragment  implements View.OnCl
                                 Intent intent2 = new Intent(getActivity(), CustomerMainActivity.class);
                                 startActivity(intent2);
                                 getActivity().finish();
-
                             }
                         }
 
