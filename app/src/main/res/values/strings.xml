@@ -68,4 +68,10 @@
     <string name="customer_profile_email">Email</string>
     <string name="customer_profile_contact_no">Contact No</string>
     <string name="customer_profile_address">Address</string>
+
+    <string name="deliver_profile_title">Deliver Profile</string>
+    <string name="delivery_profile_name">Name</string>
+    <string name="delivery_profile_contact_no">Contact No</string>
+    <string name="delivery_profile_email">Email</string>
+    <string name="delivery_profile_vehicle_no">Vehicle No</string>
 </resources>
