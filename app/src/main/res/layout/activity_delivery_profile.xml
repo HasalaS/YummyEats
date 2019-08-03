@@ -60,6 +60,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogDeliver"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -122,6 +123,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogDeliver"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -184,6 +186,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogDeliver"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -246,6 +249,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogDeliver"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->

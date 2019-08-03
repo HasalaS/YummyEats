@@ -68,10 +68,12 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="@dimen/profile_card_elevation"
                 app:cardCornerRadius="@dimen/profile_card_corner_radius"
+                android:onClick="showDialogCustomer"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
                 <LinearLayout
+                    android:id="@+id/customer_profile_card_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingVertical="@dimen/appbar_padding">
@@ -130,6 +132,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogCustomer"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -192,6 +195,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogCustomer"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -254,6 +258,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogCustomer"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->

@@ -31,6 +31,7 @@ public class CustomerMainActivity extends AppCompatActivity
         setContentView(R.layout.activity_customer_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().hide();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -109,6 +110,8 @@ public class CustomerMainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_share) {
+            Intent intent = new Intent(this, CustomerProfileActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_send) {
 
