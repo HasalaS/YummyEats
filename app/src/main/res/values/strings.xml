@@ -57,9 +57,10 @@
     <string name="food_prof_img_upl">Upload an Image</string>
     <string name="food_prof_add">Add Food</string>
 
-
-
-
-
-
+    <string name="food_profile_title">Food Profile</string>
+    <string name="food_profile_name_main">Devil Chicken</string>
+    <string name="food_profile_name">Devil Chicken</string>
+    <string name="food_profile_description">Description</string>
+    <string name="food_profile_price">Price</string>
+    <string name="food_profile_category">Category</string>
 </resources>

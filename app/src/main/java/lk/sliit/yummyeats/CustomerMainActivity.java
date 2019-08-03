@@ -123,5 +123,4 @@ public class CustomerMainActivity extends AppCompatActivity
         Intent intent = new Intent(CustomerMainActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
-
 }

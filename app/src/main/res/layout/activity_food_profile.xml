@@ -27,15 +27,7 @@
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:text="Amanda Cerny"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimary"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="amandacerny@gmail.com"
+            android:text="@string/food_profile_name_main"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"/>
 
@@ -46,7 +38,7 @@
         android:layout_width="match_parent"
         android:textAlignment="center"
         android:layout_height="wrap_content"
-        android:text="Profile"
+        android:text="@string/food_profile_title"
         android:textSize="@dimen/text_level_1"
         android:layout_margin="@dimen/appbar_padding"/>
 
@@ -86,7 +78,7 @@
                             android:layout_gravity="center"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
+                            android:src="@drawable/ic_food_name"/>
 
                     </LinearLayout>
 
@@ -106,14 +98,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Name"
+                            android:text="Food Name"
                             android:textSize="16sp"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
+                            android:text=""
                             android:textSize="18sp"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -148,7 +140,7 @@
                             android:layout_gravity="center"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
+                            android:src="@drawable/ic_food_description"/>
 
                     </LinearLayout>
 
@@ -168,14 +160,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Name"
+                            android:text="@string/food_profile_description"
                             android:textSize="16sp"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
+                            android:text=""
                             android:textSize="18sp"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -210,7 +202,7 @@
                             android:layout_gravity="center"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
+                            android:src="@drawable/ic_food_price"/>
 
                     </LinearLayout>
 
@@ -230,14 +222,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Name"
+                            android:text="@string/food_profile_price"
                             android:textSize="16sp"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
+                            android:text=""
                             android:textSize="18sp"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -272,7 +264,7 @@
                             android:layout_gravity="center"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
+                            android:src="@drawable/ic_food_category"/>
 
                     </LinearLayout>
 
@@ -292,138 +284,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Name"
+                            android:text="@string/food_profile_category"
                             android:textSize="16sp"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
-                            android:textSize="18sp"
-                            android:textColor="@color/colorPrimaryText"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardElevation="1dp"
-                app:cardCornerRadius="0dp"
-                app:cardUseCompatPadding="true">
-
-                <!-- details container-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingVertical="@dimen/appbar_padding">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:paddingLeft="25dp"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_gravity="center"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0.5dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorSecondaryText" />
-
-                    <!-- Text container-->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="4"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Name"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorSecondaryText"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
-                            android:textSize="18sp"
-                            android:textColor="@color/colorPrimaryText"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardElevation="1dp"
-                app:cardCornerRadius="0dp"
-                app:cardUseCompatPadding="true">
-
-                <!-- details container-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingVertical="@dimen/appbar_padding">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:paddingLeft="25dp"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_gravity="center"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_name"/>
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0.5dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorSecondaryText" />
-
-                    <!-- Text container-->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="4"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Name"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorSecondaryText"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
+                            android:text=""
                             android:textSize="18sp"
                             android:textColor="@color/colorPrimaryText"/>
 
