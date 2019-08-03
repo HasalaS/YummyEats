@@ -15,4 +15,15 @@
     <dimen name="btn_text">22sp</dimen>
 
     <dimen name="edit_text_vertical_margin">10dp</dimen>
+    <dimen name="edit_text_text_style">20sp</dimen>
+    <dimen name="profile_image_container_horizontal_margine">30dp</dimen>
+    <dimen name="profile_image_container_padding">16dp</dimen>
+    <dimen name="profile_circle_view_width">150dp</dimen>
+    <dimen name="profile_circle_view_height">150dp</dimen>
+    <dimen name="profile_name">22sp</dimen>
+    <dimen name="profile_email">16sp</dimen>
+    <dimen name="profile_card_elevation">1dp</dimen>
+    <dimen name="profile_card_corner_radius">0dp</dimen>
+    <dimen name="profile_field_header">16sp</dimen>
+    <dimen name="profile_field_value">18sp</dimen>
 </resources>

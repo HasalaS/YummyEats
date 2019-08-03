@@ -10,22 +10,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
+        android:layout_marginHorizontal="@dimen/profile_image_container_horizontal_margine"
         android:orientation="vertical"
-        android:padding="@dimen/appbar_padding"
+        android:padding="@dimen/profile_image_container_padding"
         android:backgroundTint="@color/colorAccent"
         android:background="@drawable/profile_first_layer_style">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="@dimen/profile_circle_view_width"
+            android:layout_height="@dimen/profile_circle_view_height"
             android:src="@drawable/propic"
             android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp"
+            android:textSize="@dimen/profile_name"
             android:textStyle="bold"
             android:text="Customer name"
             android:textAlignment="center"
@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="@dimen/profile_email"
             android:text="Customer email"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"/>
@@ -66,8 +66,8 @@
                 android:layout_height="wrap_content"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 app:cardBackgroundColor="@android:color/white"
-                app:cardElevation="1dp"
-                app:cardCornerRadius="0dp"
+                app:cardElevation="@dimen/profile_card_elevation"
+                app:cardCornerRadius="@dimen/profile_card_corner_radius"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -107,14 +107,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/customer_profile_name"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Amanda Cerny"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
                     </LinearLayout>
@@ -169,14 +169,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/customer_profile_email"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="amandacerny@gmail.com"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
                     </LinearLayout>
@@ -231,14 +231,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/customer_profile_contact_no"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0785236412"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
                     </LinearLayout>
@@ -293,14 +293,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/customer_profile_address"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="NewYork"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
                     </LinearLayout>
