@@ -5,33 +5,25 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/res_nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/res_menu_bar_home"
+            android:onClick="res_drawer_home"/>
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:id="@+id/res_nav_profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/res_menu_bar_profile"
+            android:onClick="res_drawer_profile"/>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Tools">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:id="@+id/res_nav_settings"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/res_menu_bar_settings"
+                android:onClick="res_drawer_settings"/>
+
         </menu>
     </item>
 
