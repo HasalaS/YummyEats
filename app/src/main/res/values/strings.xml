@@ -58,9 +58,14 @@
     <string name="food_prof_add">Add Food</string>
 
     <string name="food_profile_title">Food Profile</string>
-    <string name="food_profile_name_main">Devil Chicken</string>
-    <string name="food_profile_name">Devil Chicken</string>
+    <string name="food_profile_name">Name</string>
     <string name="food_profile_description">Description</string>
     <string name="food_profile_price">Price</string>
     <string name="food_profile_category">Category</string>
+
+    <string name="customer_profile_title">Customer Profile</string>
+    <string name="customer_profile_name">Name</string>
+    <string name="customer_profile_email">Email</string>
+    <string name="customer_profile_contact_no">Contact No</string>
+    <string name="customer_profile_address">Address</string>
 </resources>
