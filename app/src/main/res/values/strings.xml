@@ -41,6 +41,9 @@
     <string name="settings_msg">Settings Page</string>
 
     <string name="dialog_password_validation">Your password should have, at least eight characters and one or more of each of the following:\n\n\t• lower-case letter\n\t• upper-case letter\n\t• number\n\t• punctuation mark</string>
+    <string name="drawer_home">Home</string>
+    <string name="drawer_profile">Profile</string>
+    <string name="drawer_settings">Settings</string>
 
 
 </resources>
