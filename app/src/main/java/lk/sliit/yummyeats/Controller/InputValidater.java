@@ -4,7 +4,7 @@ import android.widget.EditText;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+//Password validation
 public class InputValidater {
 
     private static final String  passwordPattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
@@ -25,6 +25,7 @@ public class InputValidater {
             return false;
     }
 
+    //Email validation
     public boolean isValidEmail(EditText editText){
 
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(editText.getText().toString());

@@ -1,6 +1,7 @@
 package lk.sliit.yummyeats.Registration;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,10 +14,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import lk.sliit.yummyeats.Controller.InputValidater;
 import lk.sliit.yummyeats.CustomerMainActivity;
 import lk.sliit.yummyeats.DeliveryMainActivity;
 import lk.sliit.yummyeats.LoginActivity;
+import lk.sliit.yummyeats.Model.Customer;
+import lk.sliit.yummyeats.Model.Deliver;
 import lk.sliit.yummyeats.R;
 
 public class DelivererRegistrationFragment extends Fragment implements View.OnClickListener {
@@ -24,10 +33,15 @@ public class DelivererRegistrationFragment extends Fragment implements View.OnCl
     EditText etRegisterDeliverFullName;
     EditText etRegisterDeliverMobile;
     EditText etRegisterDeliverEmail;
+    EditText etRegisterDeliverVehicleNo;
     EditText etRegisterDeliverPassword;
     EditText etRegisterDeliverConfirmPassword;
 
     InputValidater inputValidater = new InputValidater();
+
+    //Init Firebase
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference table_deliver = database.getReference("Deliver");
 
 
     @Nullable
@@ -38,6 +52,7 @@ public class DelivererRegistrationFragment extends Fragment implements View.OnCl
         etRegisterDeliverFullName = rootView.findViewById(R.id.et_register_del_full_name);
         etRegisterDeliverMobile = rootView.findViewById(R.id.et_register_del_contact_no);
         etRegisterDeliverEmail = rootView.findViewById(R.id.et_register_del_email);
+        etRegisterDeliverVehicleNo = rootView.findViewById(R.id.et_register_del_vehicle_no);
         etRegisterDeliverPassword = rootView.findViewById(R.id.et_register_del_password);
         etRegisterDeliverConfirmPassword = rootView.findViewById(R.id.et_register_del_confirm_password);
 
@@ -61,7 +76,8 @@ public class DelivererRegistrationFragment extends Fragment implements View.OnCl
 
                 // validate and register the Driver
                 if (inputValidater.isEmpty(etRegisterDeliverFullName) || inputValidater.isEmpty(etRegisterDeliverMobile) || inputValidater.isEmpty(etRegisterDeliverEmail)
-                        || inputValidater.isEmpty(etRegisterDeliverPassword) || inputValidater.isEmpty(etRegisterDeliverConfirmPassword)) {
+                        ||inputValidater.isEmpty(etRegisterDeliverVehicleNo)|| inputValidater.isEmpty(etRegisterDeliverPassword)
+                        || inputValidater.isEmpty(etRegisterDeliverConfirmPassword)) {
                     Toast.makeText(getActivity(), "Text fields cannot be empty", Toast.LENGTH_SHORT).show();
                 } else if (!inputValidater.isValidMobile(etRegisterDeliverMobile)) {
                     Toast.makeText(getActivity(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
@@ -76,12 +92,38 @@ public class DelivererRegistrationFragment extends Fragment implements View.OnCl
 
                 } else if (!etRegisterDeliverConfirmPassword.getText().toString().equals(etRegisterDeliverConfirmPassword.getText().toString())) {
                     Toast.makeText(getActivity(), "Password Mismatched", Toast.LENGTH_SHORT).show();
-
-                    Intent intent2 = new Intent(getActivity(), DeliveryMainActivity.class);
-                    startActivity(intent2);
-                    getActivity().finish();
-                    break;
                 }
-        }
-    }
-}
+
+                else{
+                    // add to Firebase
+                    final ProgressDialog mDialog = new ProgressDialog(getActivity());
+                    mDialog.setMessage("Please wait...");
+                    mDialog.show();
+
+                    table_deliver.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            //check weather already registered or not
+                            if (dataSnapshot.child(etRegisterDeliverMobile.getText().toString()).exists()) {
+                                mDialog.dismiss();
+                                Toast.makeText(getActivity(), "Phone number has already registered", Toast.LENGTH_SHORT).show();
+                            } else {
+                                mDialog.dismiss();
+                                Deliver deliver = new Deliver(etRegisterDeliverMobile.getText().toString(), etRegisterDeliverFullName.getText().toString(),
+                                        etRegisterDeliverPassword.getText().toString(), etRegisterDeliverEmail.getText().toString(), etRegisterDeliverVehicleNo.getText().toString());
+                                table_deliver.child(deliver.getMobile()).setValue(deliver);
+                                Toast.makeText(getActivity(), "SignUp successful", Toast.LENGTH_SHORT).show();
+                                Intent intent2 = new Intent(getActivity(), DeliveryMainActivity.class);
+                                startActivity(intent2);
+                                getActivity().finish();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+                }
+                         break;
+                     }
+                }
+            }
