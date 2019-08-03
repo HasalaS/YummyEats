@@ -1,6 +1,7 @@
 package lk.sliit.yummyeats.Registration;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.icu.util.EthiopicCalendar;
 import android.os.Bundle;
@@ -13,6 +14,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import lk.sliit.yummyeats.Controller.InputValidater;
 import lk.sliit.yummyeats.CustomerMainActivity;
@@ -30,6 +37,10 @@ public class CustomerRegistrationFragment extends Fragment  implements View.OnCl
     EditText etRegisterCustomerConfirmPassword;
 
     InputValidater inputValidater = new InputValidater();
+
+    //Init Firebase
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference table_customer = database.getReference("Customer");
 
     @Nullable
     @Override
@@ -88,12 +99,41 @@ public class CustomerRegistrationFragment extends Fragment  implements View.OnCl
                 }
 
                 else {
-                    Intent intent2 = new Intent(getActivity(), CustomerMainActivity.class);
-                    startActivity(intent2);
-                    getActivity().finish();
-                    break;
-                }
+                    // add to Firebase
+                    final ProgressDialog mDialog = new ProgressDialog(getActivity());
+                    mDialog.setMessage("Please wait...");
+                    mDialog.show();
 
+                    table_customer.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            //check weather already registered or not
+                            if(dataSnapshot.child(etRegisterCustomerMobile.getText().toString()).exists()){
+                                mDialog.dismiss();
+                                Toast.makeText(getActivity(), "Phone number has already registered", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                mDialog.dismiss();
+                                Customer customer = new Customer(etRegisterCustomerMobile.getText().toString(), etRegisterCustomerFullName.getText().toString(),
+                                        etRegisterCustomerPassword.getText().toString(), etRegisterCustomerEmail.getText().toString());
+                                table_customer.child(customer.getMobile()).setValue(customer);
+                                Toast.makeText(getActivity(), "SignUp successful", Toast.LENGTH_SHORT).show();
+
+                                Intent intent2 = new Intent(getActivity(), CustomerMainActivity.class);
+                                startActivity(intent2);
+                                getActivity().finish();
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
+                }
+                break;
         }
     }
 }
