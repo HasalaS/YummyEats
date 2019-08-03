@@ -1,5 +1,6 @@
 package lk.sliit.yummyeats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -96,18 +97,17 @@ public class RestaurantMainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.res_nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.res_nav_profile){
+            Intent intent1 = new Intent(this,RestaurantProfileActivity.class);
+            startActivity(intent1);
+            finish();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.res_nav_settings){
+            Intent intent2 = new Intent(this,SettingsActivity.class);
+            startActivity(intent2);
+            finish();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
