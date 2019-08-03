@@ -1,6 +1,7 @@
 package lk.sliit.yummyeats.Registration;
 
 import android.content.Intent;
+import android.icu.util.EthiopicCalendar;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import lk.sliit.yummyeats.CustomerMainActivity;
@@ -26,6 +28,9 @@ public class CustomerRegistrationActivity extends Fragment  implements View.OnCl
 
         Button btnSignIn = rootView.findViewById(R.id.btn_cus_signIn);
         Button btnSignUp = rootView.findViewById(R.id.btn_cus_signUp);
+        EditText etRegisterCustomerFullName = rootView.findViewById(R.id.et_register_cus_full_name);
+        EditText etRegisterCustomerMobile = rootView.findViewById(R.id.et_register_cus_mobile);
+        EditText etRegisterCustomerEmail = rootView.findViewById(R.id.et_register_cus_email);
         btnSignUp.setOnClickListener(this);
         btnSignIn.setOnClickListener(this);
 
