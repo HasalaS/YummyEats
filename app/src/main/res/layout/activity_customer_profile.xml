@@ -302,6 +302,7 @@
                             android:text="NewYork"
                             android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
+                        <!--commented-->
 
                     </LinearLayout>
 
