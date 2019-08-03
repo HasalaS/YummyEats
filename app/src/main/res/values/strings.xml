@@ -74,4 +74,6 @@
     <string name="delivery_profile_contact_no">Contact No</string>
     <string name="delivery_profile_email">Email</string>
     <string name="delivery_profile_vehicle_no">Vehicle No</string>
+
+    <string name="btn_update">Update</string>
 </resources>
