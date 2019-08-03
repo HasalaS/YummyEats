@@ -28,7 +28,7 @@ public class RestaurantProfileActivity extends AppCompatActivity {
 
     public void showDialogRestaurant(View view){
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(RestaurantProfileActivity.this);
-        View mView = getLayoutInflater().inflate(R.layout.dialog_invalid_password, null);
+        View mView = getLayoutInflater().inflate(R.layout.dialog_update, null);
         mBuilder.setView(mView);
         AlertDialog dialog = mBuilder.create();
         dialog.show();
