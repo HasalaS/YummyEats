@@ -12,6 +12,7 @@ public class RestaurantProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_profile);
+        getSupportActionBar().hide();
     }
 
 

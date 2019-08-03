@@ -71,6 +71,15 @@
                 android:textSize="@dimen/text_level_3"/>
 
             <EditText
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/Reg_address"
+                android:textSize="@dimen/text_level_3"/>
+
+            <EditText
                 android:id="@+id/et_register_res_password"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:padding="@dimen/nav_header_vertical_spacing"
@@ -90,14 +99,7 @@
                 android:hint="Confirm Password"
                 android:textSize="@dimen/text_level_3"/>
 
-            <EditText
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:padding="@dimen/nav_header_vertical_spacing"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edit_text_style"
-                android:hint="@string/Reg_address"
-                android:textSize="@dimen/text_level_3"/>
+
 
 
 
