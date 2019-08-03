@@ -22,8 +22,8 @@ public class DelivererRegistrationActivity  extends Fragment implements View.OnC
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_register_deliverer, container, false);
 
-        Button btnSignIn = rootView.findViewById(R.id.btn_cus_signIn);
-        Button btnSignUp = rootView.findViewById(R.id.btn_cus_signUp);
+        Button btnSignIn = rootView.findViewById(R.id.btn_del_signIn);
+        Button btnSignUp = rootView.findViewById(R.id.btn_del_signUp);
         btnSignUp.setOnClickListener(this);
         btnSignIn.setOnClickListener(this);
 
@@ -33,18 +33,19 @@ public class DelivererRegistrationActivity  extends Fragment implements View.OnC
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_cus_signIn:
+            case R.id.btn_del_signIn:
                 Intent intent1 = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent1);
                 getActivity().finish();
                 break;
-            case R.id.btn_cus_signUp:
+            case R.id.btn_del_signUp:
 
                 // validate and register the Driver
 
                 Intent intent2 = new Intent(getActivity(), DeliveryMainActivity.class);
                 startActivity(intent2);
                 getActivity().finish();
+                break;
         }
     }
 }

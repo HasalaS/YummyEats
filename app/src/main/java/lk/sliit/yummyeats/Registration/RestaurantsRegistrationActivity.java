@@ -45,6 +45,7 @@ public class RestaurantsRegistrationActivity  extends Fragment implements View.O
                 Intent intent2 = new Intent(getActivity(), RestaurantMainActivity.class);
                 startActivity(intent2);
                 getActivity().finish();
+                break;
         }
     }
 }

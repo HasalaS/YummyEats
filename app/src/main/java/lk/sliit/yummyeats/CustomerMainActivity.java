@@ -1,5 +1,6 @@
 package lk.sliit.yummyeats;
 
+import lk.sliit.yummyeats.Model.Restaurant;
 import lk.sliit.yummyeats.ui.main.CustomPageAdapter;
 import lk.sliit.yummyeats.ui.main.SectionsPagerAdapter;
 
