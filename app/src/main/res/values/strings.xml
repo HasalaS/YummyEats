@@ -33,6 +33,10 @@
     <string name="Reg_address">Address</string>
     <string name="Reg_email">Email</string>
     <string name="Reg_vehicle">Vehicle Number</string>
+    <string name="res_menu_bar_profile">Profile</string>
+    <string name="res_menu_bar_home">Home</string>
+    <string name="res_menu_bar_settings">Settings</string>
+
 
 
 
