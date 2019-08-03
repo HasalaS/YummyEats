@@ -51,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
                 android:hint="@string/Reg_full_name"
+                android:inputType="textPersonName"
                 android:textSize="@dimen/text_level_3"/>
 
             <EditText
@@ -61,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
                 android:hint="@string/Reg_phone_number"
+                android:inputType="numberDecimal"
                 android:textSize="@dimen/text_level_3"/>
 
             <EditText
@@ -71,6 +73,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
                 android:hint="@string/Reg_email"
+                android:inputType="textEmailAddress"
                 android:textSize="@dimen/text_level_3"/>
 
             <EditText
@@ -81,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
                 android:hint="Password"
+                android:inputType="textPassword"
                 android:textSize="@dimen/text_level_3"/>
 
             <EditText
@@ -91,6 +95,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_style"
                 android:hint="Confirm Password"
+                android:inputType="textPassword"
                 android:textSize="@dimen/text_level_3"/>
 
             <LinearLayout
