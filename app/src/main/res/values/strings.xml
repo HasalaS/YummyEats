@@ -45,5 +45,21 @@
     <string name="drawer_profile">Profile</string>
     <string name="drawer_settings">Settings</string>
 
+    <string name="food_reg_add_food_title">Add New Food</string>
+    <string name="food_prof_name">Name</string>
+    <string name="food_prof_descrip">Description\n\n\n\n</string>
+    <string name="food_prof_price">Price</string>
+    <string name="food_prof_category">Categories</string>
+
+    <string name="food_cat_food">Food</string>
+    <string name="food_cat_bev">Beverage</string>
+
+    <string name="food_prof_img_upl">Upload an Image</string>
+    <string name="food_prof_add">Add Food</string>
+
+
+
+
+
 
 </resources>

@@ -21,7 +21,7 @@ tools:context=".FoodRegistrationActivity">
         android:layout_marginVertical="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add new food"
+        android:text="@string/food_reg_add_food_title"
         android:textSize="@dimen/text_level_1"
         android:textAlignment="center"/>
 
@@ -42,7 +42,7 @@ tools:context=".FoodRegistrationActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_style"
-            android:hint="Name"
+            android:hint="@string/food_prof_name"
             android:textSize="@dimen/text_level_3"/>
 
         <EditText
@@ -51,7 +51,7 @@ tools:context=".FoodRegistrationActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_style"
-            android:hint="Description"
+            android:hint="@string/food_prof_descrip"
             android:textSize="@dimen/text_level_3"/>
 
         <EditText
@@ -60,13 +60,13 @@ tools:context=".FoodRegistrationActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_style"
-            android:hint="Price"
+            android:hint="@string/food_prof_price"
             android:textSize="@dimen/text_level_3"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Category"/>
+            android:text="@string/food_prof_category"/>
 
 
 
@@ -81,14 +81,14 @@ tools:context=".FoodRegistrationActivity">
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Food"
+                android:text="@string/food_cat_food"
                 android:buttonTint="@color/colorAccent"/>
 
             <RadioButton
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Beverages"
+                android:text="@string/food_cat_bev"
                 android:buttonTint="@color/colorAccent"/>
 
             <View
@@ -114,7 +114,7 @@ tools:context=".FoodRegistrationActivity">
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_secondary_style"
                 android:textColor="@color/colorAccent"
-                android:text="Upload an image"
+                android:text="@string/food_prof_img_upl"
                 android:layout_marginLeft="2dp"/>
 
             <Button
@@ -123,7 +123,7 @@ tools:context=".FoodRegistrationActivity">
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_primary_style"
                 android:textColor="@color/colorPrimary"
-                android:text="Add Food"
+                android:text="@string/food_prof_add"
                 android:layout_marginLeft="2dp"/>
 
         </LinearLayout>
