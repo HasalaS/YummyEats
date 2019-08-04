@@ -19,7 +19,7 @@
             android:gravity="center"
             android:minHeight="?actionBarSize"
             android:padding="@dimen/appbar_padding"
-            android:text="@string/register"
+            android:text="@string/menu_home"
             android:layout_gravity="center"
             android:textColor="@color/colorPrimaryDark"
             android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
