@@ -18,19 +18,19 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/samplefood" />
+            android:background="@drawable/submariene" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chicken Berger"
+            android:text="Chicken Submariene"
             android:textSize="28sp"
             android:textColor="@color/colorPrimaryDark" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Awanhala Restaurent, Malabe"
+            android:text="Hungries, Malabe"
             android:textSize="16sp" />
 
         <View
@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Awanhala's Chiken burgers are seasoned with salt and ground pepper which is served by roasted chiken,It is also sold as double or triple burger."
+            android:text="Delicious chiken submariene with Hungries unique recipe.Few vegitables mixed with roasted and fried chiken"
             android:textSize="12sp" />
 
         <Button

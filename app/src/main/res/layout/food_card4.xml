@@ -18,19 +18,19 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/samplefood" />
+            android:background="@drawable/faluda" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chicken Berger"
+            android:text="Cheese Faluda"
             android:textSize="28sp"
             android:textColor="@color/colorPrimaryDark" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Awanhala Restaurent, Malabe"
+            android:text="Gimanhala restuarent,Wallawaththe"
             android:textSize="16sp" />
 
         <View
@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Awanhala's Chiken burgers are seasoned with salt and ground pepper which is served by roasted chiken,It is also sold as double or triple burger."
+            android:text="rose syrup which overpowers the entire drink. The presentation is quite pleasing with the kasa-kasa clustered in a corner, and some colourful sprinkles of jelly on the dollop of ice cream."
             android:textSize="12sp" />
 
         <Button
