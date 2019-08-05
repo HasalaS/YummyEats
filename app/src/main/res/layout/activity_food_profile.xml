@@ -60,6 +60,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogFood"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -122,6 +123,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogFood"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -184,6 +186,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogFood"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -230,7 +233,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
-                            android:textSize="@dimen/profile_field_header"
+                            android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
                     </LinearLayout>
@@ -246,6 +249,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
+                android:onClick="showDialogFood"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -292,7 +296,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
-                            android:textSize="@dimen/profile_field_header"
+                            android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
                     </LinearLayout>
