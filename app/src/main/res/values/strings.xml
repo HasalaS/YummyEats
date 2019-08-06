@@ -90,5 +90,5 @@
     <string name="login_toast_went_wrong">Something went wrong!</string>
     <string name="login_toast_click_back">Please click BACK again to exit</string>
     <string name="login_toast_user_not_exist">User doesn\'t exist! Please Sign Up</string>
-    <string name="Delete_Your_profile">Delete Your Profile</string>
+    <string name="Delete_Your_profile">Delete My Profile</string>
 </resources>
