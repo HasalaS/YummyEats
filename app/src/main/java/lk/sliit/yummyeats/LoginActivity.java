@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                 mDialog.dismiss();
                                 Customer customer = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Customer.class);
                                 if (customer.getPassword().equals(etPassword.getText().toString())) {
-                                    Toast.makeText(LoginActivity.this, R.string.login_toast_customer_successfull, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, R.string.login_toast_sign_successfull, Toast.LENGTH_SHORT).show();
                                     Intent customerIntent = new Intent(LoginActivity.this, CustomerMainActivity.class);
                                     startActivity(customerIntent);
                                     finish();
@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                                             mDialog.dismiss();
                                             Deliver deliver = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Deliver.class);
                                             if(deliver.getPassword().equals(etPassword.getText().toString())){
-                                                Toast.makeText(LoginActivity.this, R.string.login_toast_driver_successfull, Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(LoginActivity.this, R.string.login_toast_sign_successfull, Toast.LENGTH_SHORT).show();
                                                 Intent deliverIntent = new Intent(LoginActivity.this, DeliveryMainActivity.class);
                                                 startActivity(deliverIntent);
                                                 finish();
@@ -143,7 +143,6 @@ public class LoginActivity extends AppCompatActivity {
                                                             dialog.show();
                                                         }
                                                     } else {
-                                                        Toast.makeText(LoginActivity.this, R.string.login_toast_user_not_exist, Toast.LENGTH_SHORT).show();
                                                         mDialog.dismiss();
                                                         AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
                                                         View mView = getLayoutInflater().inflate(R.layout.dialog_user_doesnot_exist, null);
