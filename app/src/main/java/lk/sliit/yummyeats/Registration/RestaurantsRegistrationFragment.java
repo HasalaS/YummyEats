@@ -81,15 +81,15 @@ public class RestaurantsRegistrationFragment extends Fragment implements View.On
                 if (inputValidater.isEmpty(etRegisterRestaurantFullName)||inputValidater.isEmpty(etRegisterRestaurantMobile)||
                         inputValidater.isEmpty(etRegisterRestaurantEmail)||inputValidater.isEmpty(etRegisterRestaurantAddress)
                         ||inputValidater.isEmpty(etRegisterRestaurantPassword)||inputValidater.isEmpty(etRegisterRestaurantConfirmPassword)){
-                    Toast.makeText(getActivity(), "Text fields cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_empty_field, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(!inputValidater.isValidMobile(etRegisterRestaurantMobile)){
-                    Toast.makeText(getActivity(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_frag_mobile_valid, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(!inputValidater.isValidEmail(etRegisterRestaurantEmail)){
-                    Toast.makeText(getActivity(), "Please enter a valid email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_frag_email_valid, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(!inputValidater.isValidPassword(etRegisterRestaurantPassword)){
@@ -101,7 +101,7 @@ public class RestaurantsRegistrationFragment extends Fragment implements View.On
                 }
 
                 else if(!etRegisterRestaurantPassword.getText().toString().equals(etRegisterRestaurantConfirmPassword.getText().toString())){
-                    Toast.makeText(getActivity(), "Password Mismatched", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_password_invalid, Toast.LENGTH_SHORT).show();
                 }
                 else{
                     // add to Firebase
@@ -114,13 +114,13 @@ public class RestaurantsRegistrationFragment extends Fragment implements View.On
                             //check weather already registered or not
                             if (dataSnapshot.child(etRegisterRestaurantMobile.getText().toString()).exists()) {
                                 mDialog.dismiss();
-                                Toast.makeText(getActivity(), "Phone number has already registered", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), R.string.reg_phoneNo_exsist, Toast.LENGTH_SHORT).show();
                             } else {
                                 mDialog.dismiss();
                                 Restaurant restaurant = new Restaurant(etRegisterRestaurantMobile.getText().toString(), etRegisterRestaurantFullName.getText().toString(),
                                         etRegisterRestaurantPassword.getText().toString(), etRegisterRestaurantAddress.getText().toString(), etRegisterRestaurantEmail.getText().toString());
                                 table_restaurant.child(restaurant.getMobile()).setValue(restaurant);
-                                Toast.makeText(getActivity(), "SignUp successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), R.string.reg_successs, Toast.LENGTH_SHORT).show();
                                 Intent intent2 = new Intent(getActivity(), RestaurantMainActivity.class);
                                 startActivity(intent2);
                                 getActivity().finish();

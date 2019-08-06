@@ -75,15 +75,15 @@ public class CustomerRegistrationFragment extends Fragment  implements View.OnCl
                 if(inputValidater.isEmpty(etRegisterCustomerFullName) || inputValidater.isEmpty(etRegisterCustomerMobile) ||
                 inputValidater.isEmpty(etRegisterCustomerEmail) || inputValidater.isEmpty(etRegisterCustomerPassword) ||
                 inputValidater.isEmpty(etRegisterCustomerPassword)){
-                    Toast.makeText(getActivity(), "Text fields cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_frag_valid, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(!inputValidater.isValidMobile(etRegisterCustomerMobile)){
-                    Toast.makeText(getActivity(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_frag_mobile_valid, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(!inputValidater.isValidEmail(etRegisterCustomerEmail)){
-                    Toast.makeText(getActivity(), "Please enter a valid email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_frag_email_valid, Toast.LENGTH_SHORT).show();
                 }
 
                 else if(!inputValidater.isValidPassword(etRegisterCustomerPassword)){
@@ -95,7 +95,7 @@ public class CustomerRegistrationFragment extends Fragment  implements View.OnCl
                 }
 
                 else if(!etRegisterCustomerPassword.getText().toString().equals(etRegisterCustomerConfirmPassword.getText().toString())){
-                    Toast.makeText(getActivity(), "Password Mismatched", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_password_invalid, Toast.LENGTH_SHORT).show();
                 }
 
                 else {
@@ -110,14 +110,14 @@ public class CustomerRegistrationFragment extends Fragment  implements View.OnCl
                             //check weather already registered or not
                             if(dataSnapshot.child(etRegisterCustomerMobile.getText().toString()).exists()){
                                 mDialog.dismiss();
-                                Toast.makeText(getActivity(), "Phone number has already registered", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), R.string.reg_phoneNo_exsist, Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 mDialog.dismiss();
                                 Customer customer = new Customer(etRegisterCustomerMobile.getText().toString(), etRegisterCustomerFullName.getText().toString(),
                                         etRegisterCustomerPassword.getText().toString(), etRegisterCustomerEmail.getText().toString());
                                 table_customer.child(customer.getMobile()).setValue(customer);
-                                Toast.makeText(getActivity(), "SignUp successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), R.string.reg_successs, Toast.LENGTH_SHORT).show();
 
                                 Intent intent2 = new Intent(getActivity(), CustomerMainActivity.class);
                                 startActivity(intent2);

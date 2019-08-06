@@ -31,6 +31,15 @@
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/profile_name_text_size"
+            android:textStyle="bold"
+            android:text="Delivername@gmail.com"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"/>
+
     </LinearLayout>
 
 
@@ -99,7 +108,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/delivery_profile_name"
+                            android:text="@string/profile_name"
                             android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
@@ -162,7 +171,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/delivery_profile_contact_no"
+                            android:text="@string/profile_contact_no"
                             android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
@@ -225,7 +234,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/delivery_profile_email"
+                            android:text="@string/profile_email"
                             android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 

@@ -28,6 +28,14 @@
     <string name="Reg_restaurent_description">Anything You Wish,We Have It. </string>
     <string name="Reg_customer_description">Keep Calm and Order Food.</string>
 
+    <string name="reg_empty_field">Text fields cannot be empty</string>
+    <string name="reg_frag_valid">Text fields cannot be empty</string>
+    <string name="reg_frag_mobile_valid">Please enter a valid mobile number</string>
+    <string name="reg_frag_email_valid">Please enter a valid email</string>
+    <string name="reg_password_invalid">Password Mismatched</string>
+    <string name="reg_phoneNo_exsist">Phone number has already registered</string>
+    <string name="reg_successs">SignUp successful</string>
+
     <string name="Reg_full_name">Full Name</string>
     <string name="Reg_phone_number">Phone Number</string>
     <string name="Reg_address">Address</string>
@@ -60,22 +68,20 @@
     <string name="food_prof_add">Add Food</string>
 
     <string name="food_profile_title">Food Profile</string>
-    <string name="food_profile_name">Name</string>
     <string name="food_profile_description">Description</string>
     <string name="food_profile_price">Price</string>
     <string name="food_profile_category">Category</string>
 
     <string name="customer_profile_title">Customer Profile</string>
-    <string name="customer_profile_name">Name</string>
-    <string name="customer_profile_email">Email</string>
-    <string name="customer_profile_contact_no">Contact No</string>
-    <string name="customer_profile_address">Address</string>
+    <string name="profile_name">Name</string>
+    <string name="profile_email">Email</string>
+    <string name="profile_contact_no">Contact No</string>
+    <string name="profile_address">Address</string>
 
     <string name="deliver_profile_title">Deliver Profile</string>
-    <string name="delivery_profile_name">Name</string>
-    <string name="delivery_profile_contact_no">Contact No</string>
-    <string name="delivery_profile_email">Email</string>
     <string name="delivery_profile_vehicle_no">Vehicle No</string>
+
+    <string name="restaurant_profile_title">Restaurant Profile</string>
 
     <string name="incorrect_password">Incorrect Password</string>
     <string name="incorrect_password_text">Given password doesn\'t match with the mobile number. Please check and try again.</string>
