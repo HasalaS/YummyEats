@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_secondary_style"
                 android:textColor="@color/colorAccent"
-                android:text="Cancel"
+                android:text="@string/btnCancel"
                 android:layout_marginRight="2dp"/>
 
             <Button
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_worning_style"
                 android:textColor="@color/colorPrimary"
-                android:text="Delte"
+                android:text="@string/btnDelete"
                 android:layout_marginLeft="2dp"/>
 
         </LinearLayout>
