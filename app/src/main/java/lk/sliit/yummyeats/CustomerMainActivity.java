@@ -97,23 +97,13 @@ public class CustomerMainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(this, RestaurantMainActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(this, DeliveryMainActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_tools) {
-            Intent intent = new Intent(this, FoodProfileActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_customer_profile) {
             Intent intent = new Intent(this, CustomerProfileActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_customer_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
 
         }
 

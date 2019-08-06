@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 // check whether the input fields are empty or not
                 if(etMobileNumber.getText().toString().matches("") || etPassword.getText().toString().matches("")){
-                    Toast.makeText(LoginActivity.this, "Text fields cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "@string/login_toast_field_empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                 mDialog.dismiss();
                                 Customer customer = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Customer.class);
                                 if (customer.getPassword().equals(etPassword.getText().toString())) {
-                                    Toast.makeText(LoginActivity.this, "Sign in as a customer successful", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, R.string.login_toast_customer_successfull, Toast.LENGTH_SHORT).show();
                                     Intent customerIntent = new Intent(LoginActivity.this, CustomerMainActivity.class);
                                     startActivity(customerIntent);
                                     finish();
@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                                             mDialog.dismiss();
                                             Deliver deliver = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Deliver.class);
                                             if(deliver.getPassword().equals(etPassword.getText().toString())){
-                                                Toast.makeText(LoginActivity.this, "Sign in as a driver successful", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(LoginActivity.this, R.string.login_toast_driver_successfull, Toast.LENGTH_SHORT).show();
                                                 Intent deliverIntent = new Intent(LoginActivity.this, DeliveryMainActivity.class);
                                                 startActivity(deliverIntent);
                                                 finish();
@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                                                         mDialog.dismiss();
                                                         Restaurant restaurant = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Restaurant.class);
                                                         if(restaurant.getPassword().equals(etPassword.getText().toString())){
-                                                            Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(LoginActivity.this,R.string.login_toast_sign_successfull, Toast.LENGTH_SHORT).show();
                                                             Intent restaurantIntent = new Intent(LoginActivity.this, RestaurantMainActivity.class);
                                                             startActivity(restaurantIntent);
                                                             finish();
@@ -144,14 +144,14 @@ public class LoginActivity extends AppCompatActivity {
                                                            // Toast.makeText(LoginActivity.this, "Password Incorrect", Toast.LENGTH_SHORT).show();
                                                         }
                                                     } else {
-                                                        Toast.makeText(LoginActivity.this, "User doesn't exist! Please Sign Up", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(LoginActivity.this, R.string.login_toast_user_not_exist, Toast.LENGTH_SHORT).show();
                                                         mDialog.dismiss();
                                                     }
                                                 }
 
                                                 @Override
                                                 public void onCancelled(DatabaseError databaseError) {
-                                                    Toast.makeText(LoginActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(LoginActivity.this,R.string.login_toast_went_wrong, Toast.LENGTH_SHORT).show();
                                                     mDialog.dismiss();
                                                 }
                                             });
@@ -161,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onCancelled(DatabaseError databaseError) {
-                                        Toast.makeText(LoginActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivity.this, R.string.login_toast_went_wrong, Toast.LENGTH_SHORT).show();
                                         mDialog.dismiss();
                                     }
                                 });
@@ -170,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
-                            Toast.makeText(LoginActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, R.string.login_toast_went_wrong, Toast.LENGTH_SHORT).show();
                             mDialog.dismiss();
                         }
                     });
@@ -191,7 +191,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.login_toast_click_back, Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
 

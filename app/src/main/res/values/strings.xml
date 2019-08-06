@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">YummyEats</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -76,4 +76,11 @@
     <string name="delivery_profile_vehicle_no">Vehicle No</string>
 
     <string name="btn_update">Update</string>
+    <string name="login_toast_field_empty">Text fields cannot be empty</string>
+    <string name="login_toast_customer_successfull">Sign in as a customer successful</string>
+    <string name="login_toast_driver_successfull">Sign in as a driver successful</string>
+    <string name="login_toast_sign_successfull">Sign in successful</string>
+    <string name="login_toast_went_wrong">Something went wrong!</string>
+    <string name="login_toast_click_back">Please click BACK again to exit</string>
+    <string name="login_toast_user_not_exist">User doesn\'t exist! Please Sign Up</string>
 </resources>
