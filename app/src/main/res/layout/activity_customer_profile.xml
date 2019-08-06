@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/profile_email"
-            android:text="Customer email"
+            android:text="Customername@email.com"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"/>
 
@@ -108,14 +108,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/customer_profile_name"
+                            android:text="@string/profile_name"
                             android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Amanda Cerny"
                             android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -171,14 +170,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/customer_profile_email"
+                            android:text="@string/profile_email"
                             android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="amandacerny@gmail.com"
                             android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -234,14 +232,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/customer_profile_contact_no"
+                            android:text="@string/profile_contact_no"
                             android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="0785236412"
                             android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -297,14 +294,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/customer_profile_address"
+                            android:text="@string/profile_address"
                             android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="NewYork"
                             android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
                         <!--commented-->

@@ -78,12 +78,18 @@ public class DelivererRegistrationFragment extends Fragment implements View.OnCl
                 if (inputValidater.isEmpty(etRegisterDeliverFullName) || inputValidater.isEmpty(etRegisterDeliverMobile) || inputValidater.isEmpty(etRegisterDeliverEmail)
                         ||inputValidater.isEmpty(etRegisterDeliverVehicleNo)|| inputValidater.isEmpty(etRegisterDeliverPassword)
                         || inputValidater.isEmpty(etRegisterDeliverConfirmPassword)) {
-                    Toast.makeText(getActivity(), "Text fields cannot be empty", Toast.LENGTH_SHORT).show();
-                } else if (!inputValidater.isValidMobile(etRegisterDeliverMobile)) {
-                    Toast.makeText(getActivity(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
-                } else if (!inputValidater.isValidEmail(etRegisterDeliverEmail)) {
-                    Toast.makeText(getActivity(), "Please enter a valid email", Toast.LENGTH_SHORT).show();
-                } else if (!inputValidater.isValidPassword(etRegisterDeliverPassword)) {
+                    Toast.makeText(getActivity(), R.string.reg_empty_field, Toast.LENGTH_SHORT).show();
+                }
+
+                else if (!inputValidater.isValidMobile(etRegisterDeliverMobile)) {
+                    Toast.makeText(getActivity(), R.string.reg_frag_mobile_valid, Toast.LENGTH_SHORT).show();
+                }
+
+                else if (!inputValidater.isValidEmail(etRegisterDeliverEmail)) {
+                    Toast.makeText(getActivity(), R.string.reg_frag_email_valid, Toast.LENGTH_SHORT).show();
+                }
+
+                else if (!inputValidater.isValidPassword(etRegisterDeliverPassword)) {
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
                     View mView = getLayoutInflater().inflate(R.layout.dialog_invalid_password, null);
                     mBuilder.setView(mView);
@@ -91,7 +97,7 @@ public class DelivererRegistrationFragment extends Fragment implements View.OnCl
                     dialog.show();
 
                 } else if (!etRegisterDeliverConfirmPassword.getText().toString().equals(etRegisterDeliverConfirmPassword.getText().toString())) {
-                    Toast.makeText(getActivity(), "Password Mismatched", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.reg_password_invalid, Toast.LENGTH_SHORT).show();
                 }
 
                 else{
@@ -106,13 +112,13 @@ public class DelivererRegistrationFragment extends Fragment implements View.OnCl
                             //check weather already registered or not
                             if (dataSnapshot.child(etRegisterDeliverMobile.getText().toString()).exists()) {
                                 mDialog.dismiss();
-                                Toast.makeText(getActivity(), "Phone number has already registered", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), R.string.reg_phoneNo_exsist, Toast.LENGTH_SHORT).show();
                             } else {
                                 mDialog.dismiss();
                                 Deliver deliver = new Deliver(etRegisterDeliverMobile.getText().toString(), etRegisterDeliverFullName.getText().toString(),
                                         etRegisterDeliverPassword.getText().toString(), etRegisterDeliverEmail.getText().toString(), etRegisterDeliverVehicleNo.getText().toString());
                                 table_deliver.child(deliver.getMobile()).setValue(deliver);
-                                Toast.makeText(getActivity(), "SignUp successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), R.string.reg_successs, Toast.LENGTH_SHORT).show();
                                 Intent intent2 = new Intent(getActivity(), DeliveryMainActivity.class);
                                 startActivity(intent2);
                                 getActivity().finish();

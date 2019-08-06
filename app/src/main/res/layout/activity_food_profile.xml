@@ -99,7 +99,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/food_profile_name"
+                            android:text="@string/profile_name"
                             android:textSize="@dimen/profile_field_header"
                             android:textColor="@color/colorSecondaryText"/>
 
