@@ -5,11 +5,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsActivity"
+    android:layout_marginTop="@dimen/activity_vertical_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/nav_header_vertical_spacing"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/settings_msg"/>
+        android:orientation="vertical">
 
+
+        <EditText
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/settings_current_password"
+            android:textSize="@dimen/text_level_3"/>
+
+        <EditText
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/settings_new_password"
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_level_3"/>
+
+        <EditText
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/settings_new_confirm_password"
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_level_3"/>
+
+
+
+        <LinearLayout
+            android:layout_marginVertical="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:textSize="@dimen/text_level_3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_secondary_style"
+                android:textColor="@color/colorAccent"
+                android:text="@string/btn_logout"
+                android:layout_marginRight="2dp"/>
+
+            <Button
+                android:textSize="@dimen/text_level_3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_primary_style"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/btn_update"
+                android:layout_marginLeft="2dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

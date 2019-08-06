@@ -29,4 +29,10 @@ public class CustomerProfileActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(CustomerProfileActivity.this, CustomerMainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

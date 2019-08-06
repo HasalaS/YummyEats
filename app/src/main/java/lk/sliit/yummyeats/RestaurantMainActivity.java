@@ -108,7 +108,6 @@ public class RestaurantMainActivity extends AppCompatActivity
         } else if (id == R.id.res_nav_settings){
             Intent intent2 = new Intent(this,SettingsActivity.class);
             startActivity(intent2);
-            finish();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

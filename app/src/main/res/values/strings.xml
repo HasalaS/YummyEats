@@ -33,6 +33,8 @@
     <string name="Reg_address">Address</string>
     <string name="Reg_email">Email</string>
     <string name="Reg_vehicle">Vehicle Number</string>
+    <string name="Reg_password">Password</string>
+    <string name="Reg_confirm_password">Confirm Password</string>
 
     <string name="delivery_side_bar_Home">Home</string>
     <string name="delivery_side_bar_profile">Profile</string>
@@ -82,7 +84,12 @@
     <string name="food_added">Congratulations!</string>
     <string name="food_added_text">You launched a new food successfully.</string>
 
+    <string name="settings_current_password">Current Password</string>
+    <string name="settings_new_password">New Password</string>
+    <string name="settings_new_confirm_password">Confirm new password</string>
+    <string name="btn_logout">Logout</string>
     <string name="btn_update">Update</string>
+
     <string name="login_toast_field_empty">Text fields cannot be empty</string>
     <string name="login_toast_customer_successfull">Sign in as a customer successful</string>
     <string name="login_toast_driver_successfull">Sign in as a driver successful</string>
