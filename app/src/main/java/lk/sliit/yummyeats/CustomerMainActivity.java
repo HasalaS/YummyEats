@@ -94,9 +94,8 @@ public class CustomerMainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            Intent intent = new Intent(this, RegisterActivity.class);
-            startActivity(intent);
+        if (id == R.id.nav_cus_home) {
+
         } else if (id == R.id.nav_customer_profile) {
             Intent intent = new Intent(this, CustomerProfileActivity.class);
             startActivity(intent);
@@ -112,8 +111,5 @@ public class CustomerMainActivity extends AppCompatActivity
         return true;
     }
 
-    public void go(View view){
-        Intent intent = new Intent(CustomerMainActivity.this, RegisterActivity.class);
-        startActivity(intent);
-    }
+
 }
