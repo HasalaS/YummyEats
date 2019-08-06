@@ -75,6 +75,13 @@
     <string name="delivery_profile_email">Email</string>
     <string name="delivery_profile_vehicle_no">Vehicle No</string>
 
+    <string name="incorrect_password">Incorrect Password</string>
+    <string name="incorrect_password_text">Given password doesn\'t match with the mobile number. Please check and try again.</string>
+    <string name="user_does_not_exist">User does not exist</string>
+    <string name="user_does_not_exist_text">Given mobile number is not registered yet. Please SignUp first.</string>
+    <string name="food_added">Congratulations!</string>
+    <string name="food_added_text">You launched a new food successfully.</string>
+
     <string name="btn_update">Update</string>
     <string name="login_toast_field_empty">Text fields cannot be empty</string>
     <string name="login_toast_customer_successfull">Sign in as a customer successful</string>

@@ -120,6 +120,7 @@ tools:context=".FoodRegistrationActivity">
                 android:layout_marginLeft="2dp"/>
 
             <Button
+                android:id="@+id/btn_food_reg_add"
                 android:textSize="@dimen/text_level_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

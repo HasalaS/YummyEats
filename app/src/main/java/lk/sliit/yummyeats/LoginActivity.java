@@ -88,17 +88,18 @@ public class LoginActivity extends AppCompatActivity {
                                 mDialog.dismiss();
                                 Customer customer = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Customer.class);
                                 if (customer.getPassword().equals(etPassword.getText().toString())) {
+                                    Toast.makeText(LoginActivity.this, "Sign successful", Toast.LENGTH_SHORT).show();
                                     Toast.makeText(LoginActivity.this, R.string.login_toast_customer_successfull, Toast.LENGTH_SHORT).show();
                                     Intent customerIntent = new Intent(LoginActivity.this, CustomerMainActivity.class);
                                     startActivity(customerIntent);
                                     finish();
                                 } else {
+                                    mDialog.dismiss();
                                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
-                                    View mView = getLayoutInflater().inflate(R.layout.dialog_invalid_password, null);
+                                    View mView = getLayoutInflater().inflate(R.layout.dialog_incorrect_password, null);
                                     mBuilder.setView(mView);
                                     AlertDialog dialog = mBuilder.create();
                                     dialog.show();
-                                   // Toast.makeText(LoginActivity.this, "Password Incorrect", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
                                 // user does not exist in customer
@@ -110,17 +111,18 @@ public class LoginActivity extends AppCompatActivity {
                                             mDialog.dismiss();
                                             Deliver deliver = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Deliver.class);
                                             if(deliver.getPassword().equals(etPassword.getText().toString())){
+                                                Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                                                 Toast.makeText(LoginActivity.this, R.string.login_toast_driver_successfull, Toast.LENGTH_SHORT).show();
                                                 Intent deliverIntent = new Intent(LoginActivity.this, DeliveryMainActivity.class);
                                                 startActivity(deliverIntent);
                                                 finish();
                                             } else {
+                                                mDialog.dismiss();
                                                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
-                                                View mView = getLayoutInflater().inflate(R.layout.dialog_invalid_password, null);
+                                                View mView = getLayoutInflater().inflate(R.layout.dialog_incorrect_password, null);
                                                 mBuilder.setView(mView);
                                                 AlertDialog dialog = mBuilder.create();
                                                 dialog.show();
-                                               // Toast.makeText(LoginActivity.this, "Password Incorrect", Toast.LENGTH_SHORT).show();
                                             }
                                         } else {
                                             // user does not exist in deliver
@@ -137,15 +139,19 @@ public class LoginActivity extends AppCompatActivity {
                                                             finish();
                                                         } else {
                                                             AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
-                                                            View mView = getLayoutInflater().inflate(R.layout.dialog_invalid_password, null);
+                                                            View mView = getLayoutInflater().inflate(R.layout.dialog_incorrect_password, null);
                                                             mBuilder.setView(mView);
                                                             AlertDialog dialog = mBuilder.create();
                                                             dialog.show();
-                                                           // Toast.makeText(LoginActivity.this, "Password Incorrect", Toast.LENGTH_SHORT).show();
                                                         }
                                                     } else {
                                                         Toast.makeText(LoginActivity.this, R.string.login_toast_user_not_exist, Toast.LENGTH_SHORT).show();
                                                         mDialog.dismiss();
+                                                        AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
+                                                        View mView = getLayoutInflater().inflate(R.layout.dialog_user_doesnot_exist, null);
+                                                        mBuilder.setView(mView);
+                                                        AlertDialog dialog = mBuilder.create();
+                                                        dialog.show();
                                                     }
                                                 }
 

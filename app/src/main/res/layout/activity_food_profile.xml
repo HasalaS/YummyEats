@@ -19,7 +19,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="@dimen/profile_circle_view_width"
             android:layout_height="@dimen/profile_circle_view_height"
-            android:src="@drawable/propic"
+            android:src="@drawable/order2"
             android:layout_gravity="center"/>
 
         <TextView
