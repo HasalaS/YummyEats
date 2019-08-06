@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 // check whether the input fields are empty or not
                 if(etMobileNumber.getText().toString().matches("") || etPassword.getText().toString().matches("")){
-                    Toast.makeText(LoginActivity.this, "@string/login_toast_field_empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, R.string.login_toast_field_empty, Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -88,7 +88,6 @@ public class LoginActivity extends AppCompatActivity {
                                 mDialog.dismiss();
                                 Customer customer = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Customer.class);
                                 if (customer.getPassword().equals(etPassword.getText().toString())) {
-                                    Toast.makeText(LoginActivity.this, "Sign successful", Toast.LENGTH_SHORT).show();
                                     Toast.makeText(LoginActivity.this, R.string.login_toast_customer_successfull, Toast.LENGTH_SHORT).show();
                                     Intent customerIntent = new Intent(LoginActivity.this, CustomerMainActivity.class);
                                     startActivity(customerIntent);
@@ -111,7 +110,6 @@ public class LoginActivity extends AppCompatActivity {
                                             mDialog.dismiss();
                                             Deliver deliver = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Deliver.class);
                                             if(deliver.getPassword().equals(etPassword.getText().toString())){
-                                                Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                                                 Toast.makeText(LoginActivity.this, R.string.login_toast_driver_successfull, Toast.LENGTH_SHORT).show();
                                                 Intent deliverIntent = new Intent(LoginActivity.this, DeliveryMainActivity.class);
                                                 startActivity(deliverIntent);

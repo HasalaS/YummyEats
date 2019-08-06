@@ -1,5 +1,6 @@
 package lk.sliit.yummyeats;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,10 +16,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class RestaurantMainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class RestaurantMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
+    Button btnCard1Update, btnCard2Update, btnCard1Delete, btnCard2Delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,19 @@ public class RestaurantMainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        btnCard1Update = findViewById(R.id.food_card_1_update);
+        btnCard2Update = findViewById(R.id.food_card_2_update);
+        btnCard1Delete = findViewById(R.id.food_card_1_delete);
+        btnCard2Delete = findViewById(R.id.food_card_2_delete);
+
+        btnCard1Update.setOnClickListener(this);
+        btnCard2Update.setOnClickListener(this);
+        btnCard1Delete.setOnClickListener(this);
+        btnCard2Delete.setOnClickListener(this);
+
+
+
     }
 
     boolean doubleBackToExitPressedOnce = false;
@@ -58,7 +74,7 @@ public class RestaurantMainActivity extends AppCompatActivity
             }
 
             this.doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.login_toast_click_back, Toast.LENGTH_SHORT).show();
 
             new Handler().postDelayed(new Runnable() {
 
@@ -113,5 +129,25 @@ public class RestaurantMainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.food_card_1_update:
+            case R.id.food_card_2_update:
+                Intent intent = new Intent(RestaurantMainActivity.this, FoodProfileActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+
+            case R.id.food_card_1_delete:
+            case R.id.food_card_2_delete:
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(RestaurantMainActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.dialog_food_delete_confirmation, null);
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+        }
     }
 }

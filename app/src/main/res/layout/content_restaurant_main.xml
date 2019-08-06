@@ -6,20 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
     <LinearLayout
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".RestaurantMainActivity"
-        tools:showIn="@layout/app_bar_restaurant_main"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".RestaurantMainActivity"
+            tools:showIn="@layout/app_bar_restaurant_main"
             android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/appbar_height">
 
             <include layout="@layout/restaurent_card"></include>
             <include layout="@layout/restaurent_card2"></include>
@@ -27,7 +32,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </ScrollView>

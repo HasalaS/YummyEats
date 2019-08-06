@@ -1,6 +1,7 @@
 package lk.sliit.yummyeats;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,5 +21,12 @@ public class FoodProfileActivity extends AppCompatActivity {
         mBuilder.setView(mView);
         AlertDialog dialog = mBuilder.create();
         dialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(FoodProfileActivity.this, RestaurantMainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

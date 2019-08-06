@@ -26,4 +26,6 @@
     <dimen name="profile_card_corner_radius">0dp</dimen>
     <dimen name="profile_field_header">16sp</dimen>
     <dimen name="profile_field_value">18sp</dimen>
+
+    <dimen name="appbar_height">60dp</dimen>
 </resources>
