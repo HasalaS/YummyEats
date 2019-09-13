@@ -26,6 +26,7 @@ tools:context=".FoodRegistrationActivity">
         android:textAlignment="center"/>
 
     <ImageView
+        android:id="@+id/iv_foodImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -39,6 +40,7 @@ tools:context=".FoodRegistrationActivity">
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/et_food_registration_name"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:padding="@dimen/nav_header_vertical_spacing"
             android:layout_width="match_parent"
@@ -48,15 +50,17 @@ tools:context=".FoodRegistrationActivity">
             android:textSize="@dimen/text_level_3"/>
 
         <EditText
+            android:id="@+id/et_food_registration_description"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:padding="@dimen/nav_header_vertical_spacing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_style"
+            android:background="@drawable/edit_text_style_multiline"
             android:hint="@string/food_prof_descrip"
             android:textSize="@dimen/text_level_3"/>
 
         <EditText
+            android:id="@+id/et_food_registration_price"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:padding="@dimen/nav_header_vertical_spacing"
             android:layout_width="match_parent"
@@ -70,9 +74,8 @@ tools:context=".FoodRegistrationActivity">
             android:layout_height="wrap_content"
             android:text="@string/food_prof_category"/>
 
-
-
         <RadioGroup
+            android:id="@+id/tg_food_registration_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -80,6 +83,7 @@ tools:context=".FoodRegistrationActivity">
 
 
             <RadioButton
+                android:id="@+id/rb_food_registration_food"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -87,6 +91,7 @@ tools:context=".FoodRegistrationActivity">
                 android:buttonTint="@color/colorAccent"/>
 
             <RadioButton
+                android:id="@+id/rb_food_registration_beverage"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -97,11 +102,7 @@ tools:context=".FoodRegistrationActivity">
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"/>
-
-
         </RadioGroup>
-
-
 
         <LinearLayout
             android:layout_marginVertical="@dimen/nav_header_vertical_spacing"
@@ -110,6 +111,7 @@ tools:context=".FoodRegistrationActivity">
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_food_registration_uploadImage"
                 android:layout_marginVertical="@dimen/btn_text"
                 android:textSize="@dimen/text_level_3"
                 android:layout_width="match_parent"
@@ -120,7 +122,7 @@ tools:context=".FoodRegistrationActivity">
                 android:layout_marginLeft="2dp"/>
 
             <Button
-                android:id="@+id/btn_food_reg_add"
+                android:id="@+id/btn_food_registration_addFood"
                 android:textSize="@dimen/text_level_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,9 +133,7 @@ tools:context=".FoodRegistrationActivity">
 
         </LinearLayout>
 
-
     </LinearLayout>
-
 
 </LinearLayout>
 

@@ -17,11 +17,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import lk.sliit.yummyeats.Model.Customer;
 import lk.sliit.yummyeats.Model.Deliver;
 import lk.sliit.yummyeats.Model.Restaurant;
+import lk.sliit.yummyeats.Model.SessionUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -88,7 +90,14 @@ public class LoginActivity extends AppCompatActivity {
                                 mDialog.dismiss();
                                 Customer customer = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Customer.class);
                                 if (customer.getPassword().equals(etPassword.getText().toString())) {
-                                    Toast.makeText(LoginActivity.this, R.string.login_toast_sign_successfull, Toast.LENGTH_SHORT).show();
+
+                                    // setting the session user
+                                    SessionUser.customer = customer;
+                                    SessionUser.deliver = null;
+                                    SessionUser.restaurant = null;
+                                    Toast.makeText(LoginActivity.this, SessionUser.customer.getName(), Toast.LENGTH_LONG).show();
+
+                                    //Toast.makeText(LoginActivity.this, R.string.login_toast_sign_successfull, Toast.LENGTH_SHORT).show();
                                     Intent customerIntent = new Intent(LoginActivity.this, CustomerMainActivity.class);
                                     startActivity(customerIntent);
                                     finish();
@@ -110,6 +119,12 @@ public class LoginActivity extends AppCompatActivity {
                                             mDialog.dismiss();
                                             Deliver deliver = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Deliver.class);
                                             if(deliver.getPassword().equals(etPassword.getText().toString())){
+
+                                                // setting the session user
+                                                SessionUser.deliver = deliver;
+                                                SessionUser.customer = null;
+                                                SessionUser.restaurant = null;
+
                                                 Toast.makeText(LoginActivity.this, R.string.login_toast_sign_successfull, Toast.LENGTH_SHORT).show();
                                                 Intent deliverIntent = new Intent(LoginActivity.this, DeliveryMainActivity.class);
                                                 startActivity(deliverIntent);
@@ -131,6 +146,12 @@ public class LoginActivity extends AppCompatActivity {
                                                         mDialog.dismiss();
                                                         Restaurant restaurant = dataSnapshot.child(etMobileNumber.getText().toString()).getValue(Restaurant.class);
                                                         if(restaurant.getPassword().equals(etPassword.getText().toString())){
+
+                                                            // setting the session user
+                                                            SessionUser.restaurant = restaurant;
+                                                            SessionUser.deliver = null;
+                                                            SessionUser.customer = null;
+
                                                             Toast.makeText(LoginActivity.this,R.string.login_toast_sign_successfull, Toast.LENGTH_SHORT).show();
                                                             Intent restaurantIntent = new Intent(LoginActivity.this, RestaurantMainActivity.class);
                                                             startActivity(restaurantIntent);

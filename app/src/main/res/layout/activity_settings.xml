@@ -52,17 +52,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-            <Button
-                android:textSize="@dimen/text_level_3"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_secondary_style"
-                android:textColor="@color/colorAccent"
-                android:text="@string/btn_logout"
-                android:layout_marginRight="2dp"/>
-
             <Button
                 android:textSize="@dimen/text_level_3"
                 android:layout_width="0dp"
