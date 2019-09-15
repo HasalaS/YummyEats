@@ -23,20 +23,22 @@
             android:layout_gravity="center"/>
 
         <TextView
+            android:id="@+id/deliver_profile_title_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/profile_name_text_size"
             android:textStyle="bold"
-            android:text="Deliver name"
+            android:text=""
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"/>
 
         <TextView
+            android:id="@+id/deliver_profile_title_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/profile_name_text_size"
             android:textStyle="bold"
-            android:text="Delivername@gmail.com"
+            android:text=""
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"/>
 
@@ -69,7 +71,7 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
-                android:onClick="showDialogDeliver"
+
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -103,21 +105,24 @@
                         android:layout_weight="4"
                         android:layout_height="match_parent"
                         android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:onClick="showDialogDeliver">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/profile_name"
                             android:textSize="@dimen/profile_field_header"
-                            android:textColor="@color/colorSecondaryText"/>
+                            android:textColor="@color/colorSecondaryText"
+                            android:id="@+id/tv_deliver_profile_name_key"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
                             android:textSize="@dimen/profile_field_value"
-                            android:textColor="@color/colorPrimaryText"/>
+                            android:textColor="@color/colorPrimaryText"
+                            android:id="@+id/tv_deliver_profile_name_value"/>
 
                     </LinearLayout>
 
@@ -132,7 +137,6 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
-                android:onClick="showDialogDeliver"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -166,9 +170,11 @@
                         android:layout_weight="4"
                         android:layout_height="match_parent"
                         android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:onClick="showDialogDeliver">
 
                         <TextView
+                            android:id="@+id/tv_deliver_profile_contact_key"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/profile_contact_no"
@@ -176,6 +182,7 @@
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
+                            android:id="@+id/tv_deliver_profile_contact_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -195,7 +202,6 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
-                android:onClick="showDialogDeliver"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -229,9 +235,11 @@
                         android:layout_weight="4"
                         android:layout_height="match_parent"
                         android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:onClick="showDialogDeliver">
 
                         <TextView
+                            android:id="@+id/tv_deliver_profile_email_key"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/profile_email"
@@ -239,6 +247,7 @@
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
+                            android:id="@+id/tv_deliver_profile_email_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -292,9 +301,11 @@
                         android:layout_weight="4"
                         android:layout_height="match_parent"
                         android:paddingLeft="@dimen/appbar_padding"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:onClick="showDialogDeliver">
 
                         <TextView
+                            android:id="@+id/tv_deliver_profile_vehicle_key"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/delivery_profile_vehicle_no"
@@ -302,6 +313,7 @@
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
+                            android:id="@+id/tv_deliver_profile_vehicle_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
