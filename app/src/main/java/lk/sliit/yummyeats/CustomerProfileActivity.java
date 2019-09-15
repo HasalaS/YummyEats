@@ -20,7 +20,7 @@ import lk.sliit.yummyeats.Model.SessionUser;
 
 public class CustomerProfileActivity extends AppCompatActivity {
 
-    TextView tvName;
+    TextView tvName, tvEmail, tvMobile, hName, hEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,20 @@ public class CustomerProfileActivity extends AppCompatActivity {
 
         tvName = findViewById(R.id.tv_cus_profile_card_name_value);
         tvName.setText(SessionUser.customer.getName());
+
+        tvEmail = findViewById(R.id.tv_cus_profile_card_email_value);
+        tvEmail.setText(SessionUser.customer.getEmail());
+
+        tvMobile = findViewById(R.id.tv_cus_profile_card_mobile_value);
+        tvMobile.setText(SessionUser.customer.getMobile());
+
+        hName = findViewById(R.id.cusHeaderName);
+        hName.setText(SessionUser.customer.getName());
+
+        hEmail = findViewById(R.id.cusHeaderEmail);
+        hEmail.setText(SessionUser.customer.getEmail());
     }
+
 
     @Override
     protected void onResume() {
