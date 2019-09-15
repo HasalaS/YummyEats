@@ -80,7 +80,7 @@ public class DeliveryProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //update
-              
+
 
                // Toast.makeText(DeliveryProfileActivity.this,"Data Updated Succesfully!",Toast.LENGTH_SHORT).show();
             }
