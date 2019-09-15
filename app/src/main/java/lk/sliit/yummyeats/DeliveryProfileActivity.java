@@ -82,7 +82,7 @@ public class DeliveryProfileActivity extends AppCompatActivity {
                 //update
 
 
-                //Toast.makeText(DeliveryProfileActivity.this,"Data Updated Succesfully!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeliveryProfileActivity.this,"Data Updated Succesfully!",Toast.LENGTH_SHORT).show();
             }
         });
 
