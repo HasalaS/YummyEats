@@ -23,11 +23,11 @@
             android:layout_gravity="center"/>
 
         <TextView
+            android:id="@+id/foodHeaderName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/profile_name_text_size"
             android:textStyle="bold"
-            android:text="Food name"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"/>
 
@@ -97,6 +97,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_food_profile_card_name_key"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/profile_name"
@@ -104,6 +105,7 @@
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
+                            android:id="@+id/tv_food_profile_card_name_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -160,6 +162,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_food_profile_card_desc_key"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/food_profile_description"
@@ -167,6 +170,7 @@
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
+                            android:id="@+id/tv_food_profile_card_desc_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -223,6 +227,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_food_profile_card_price_key"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/food_profile_price"
@@ -230,6 +235,7 @@
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
+                            android:id="@+id/tv_food_profile_card_price_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -286,6 +292,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_food_profile_card_category_key"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/food_profile_category"
@@ -293,6 +300,7 @@
                             android:textColor="@color/colorSecondaryText"/>
 
                         <TextView
+                            android:id="@+id/tv_food_profile_card_category_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
