@@ -64,7 +64,7 @@
     <string name="food_cat_food">Food</string>
     <string name="food_cat_bev">Beverage</string>
 
-    <string name="food_prof_img_upl">Upload an Image</string>
+    <string name="food_prof_img_upl">Choose an Image</string>
     <string name="food_prof_add">Add Food</string>
 
     <string name="food_profile_title">Food Profile</string>

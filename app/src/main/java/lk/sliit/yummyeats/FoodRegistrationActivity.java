@@ -23,9 +23,14 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApiNotAvailableException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import lk.sliit.yummyeats.Model.Food;
+import lk.sliit.yummyeats.Model.SessionUser;
 
 public class FoodRegistrationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,6 +47,12 @@ public class FoodRegistrationActivity extends AppCompatActivity implements View.
     FirebaseStorage storage = FirebaseStorage.getInstance();
     StorageReference storageRef = storage.getReferenceFromUrl("gs://yummyeats-85b04.appspot.com/");
 
+    //Init Firebase
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference table_food = database.getReference("Food");
+
+    Food food = new Food();
+    String uploadedFilePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +89,6 @@ public class FoodRegistrationActivity extends AppCompatActivity implements View.
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_food_registration_addFood:
-
                 FileUploader();
                 break;
 
@@ -92,20 +102,42 @@ public class FoodRegistrationActivity extends AppCompatActivity implements View.
         if(filePath != null) {
             pd.show();
 
-            StorageReference childRef = storageRef.child("image.jpg");
+            final StorageReference childRef = storageRef.child(SessionUser.restaurant.getMobile() + "_" + etName.getText().toString().trim().replace(" ", "_") + ".jpg");
 
             //uploading the image
-            UploadTask uploadTask = childRef.putFile(filePath);
+            final UploadTask uploadTask = childRef.putFile(filePath);
 
             uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    // getting uploaded image url and insert data into realtime database
+                    childRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            food.setName(etName.getText().toString());
+                            food.setDescription(etDescription.getText().toString());
+                            food.setPrice(etPrice.getText().toString());
+                            food.setRestaurant(SessionUser.restaurant.getAddress());
+                            food.setResturantMobile(SessionUser.restaurant.getMobile());
+                            food.setImage(uri.toString());
+
+                            if (rbBeverage.isChecked() == true) {
+                                food.setCategory("Beverage");
+                            } else {
+                                food.setCategory("Food");
+                            }
+
+                            try{
+                                // insert into realtime database
+                                table_food.push().setValue(food);
+                            } catch (Exception e){
+                                Toast.makeText(FoodRegistrationActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
                     pd.dismiss();
-                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(FoodRegistrationActivity.this);
-                    View mView = getLayoutInflater().inflate(R.layout.dialog_food_added_successful, null);
-                    mBuilder.setView(mView);
-                    AlertDialog dialog = mBuilder.create();
-                    dialog.show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
