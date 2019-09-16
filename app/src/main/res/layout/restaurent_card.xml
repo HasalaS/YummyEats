@@ -16,11 +16,13 @@
         android:padding="10dp">
 
         <ImageView
+            android:id="@+id/res_food_card_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/samplefood" />
+            android:background="@drawable/loadingfood" />
 
         <TextView
+            android:id="@+id/res_food_card_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chicken Berger"
@@ -28,9 +30,17 @@
             android:textColor="@color/colorPrimaryDark" />
 
         <TextView
+            android:id="@+id/res_food_card_restaurant"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Awanhala Restaurent, Malabe"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/res_food_card_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rs. 460.00"
             android:textSize="16sp" />
 
         <View
@@ -40,6 +50,7 @@
             android:background="@android:color/darker_gray"/>
 
         <TextView
+            android:id="@+id/res_food_card_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Awanhala's Chiken burgers are seasoned with salt and ground pepper which is served by roasted chiken,It is also sold as double or triple burger."
@@ -52,7 +63,7 @@
             android:layout_gravity="end">
 
             <Button
-                android:id="@+id/food_card_1_delete"
+                android:id="@+id/res_food_card_btn_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="20dp"
@@ -64,7 +75,7 @@
                 android:layout_marginRight="@dimen/activity_horizontal_margin"/>
 
             <Button
-                android:id="@+id/food_card_1_update"
+                android:id="@+id/res_food_card_btn_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="20dp"

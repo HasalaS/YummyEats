@@ -138,6 +138,13 @@ public class FoodRegistrationActivity extends AppCompatActivity implements View.
                     });
 
                     pd.dismiss();
+
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(FoodRegistrationActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_food_added_successful, null);
+                    mBuilder.setView(mView);
+                    AlertDialog dialog = mBuilder.create();
+                    dialog.show();
+
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,9 +21,26 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+import lk.sliit.yummyeats.Model.Food;
+import lk.sliit.yummyeats.ui.main.CustomFirebaseAdapter;
+
 public class RestaurantMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
-    Button btnCard1Update, btnCard2Update, btnCard1Delete, btnCard2Delete;
+    //Init Firebase
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference table_food = database.getReference("Food");
+
+    RecyclerView recyclerView;
+    ArrayList<Food> foodArrayList;
+    CustomFirebaseAdapter customFirebaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +65,32 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        btnCard1Update = findViewById(R.id.food_card_1_update);
-        btnCard2Update = findViewById(R.id.food_card_2_update);
-        btnCard1Delete = findViewById(R.id.food_card_1_delete);
-        btnCard2Delete = findViewById(R.id.food_card_2_delete);
+        recyclerView = findViewById(R.id.rv_foodList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        foodArrayList = new ArrayList<Food>();
 
-        btnCard1Update.setOnClickListener(this);
-        btnCard2Update.setOnClickListener(this);
-        btnCard1Delete.setOnClickListener(this);
-        btnCard2Delete.setOnClickListener(this);
+        table_food.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot dSnapshot: dataSnapshot.getChildren()){
+                    Food food = dSnapshot.getValue(Food.class);
+                    foodArrayList.add(food);
+                }
 
+                customFirebaseAdapter = new CustomFirebaseAdapter(RestaurantMainActivity.this, foodArrayList);
+                recyclerView.setAdapter(customFirebaseAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(RestaurantMainActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
 
     }
@@ -133,21 +168,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.food_card_1_update:
-            case R.id.food_card_2_update:
-                Intent intent = new Intent(RestaurantMainActivity.this, FoodProfileActivity.class);
-                startActivity(intent);
-                finish();
-                break;
 
-            case R.id.food_card_1_delete:
-            case R.id.food_card_2_delete:
-                AlertDialog.Builder mBuilder = new AlertDialog.Builder(RestaurantMainActivity.this);
-                View mView = getLayoutInflater().inflate(R.layout.dialog_food_delete_confirmation, null);
-                mBuilder.setView(mView);
-                AlertDialog dialog = mBuilder.create();
-                dialog.show();
-        }
     }
 }
