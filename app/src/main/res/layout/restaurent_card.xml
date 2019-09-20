@@ -22,6 +22,11 @@
             android:background="@drawable/loadingfood" />
 
         <TextView
+            android:id="@+id/food_card_id"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <TextView
             android:id="@+id/res_food_card_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

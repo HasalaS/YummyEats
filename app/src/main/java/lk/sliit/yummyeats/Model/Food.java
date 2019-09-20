@@ -1,6 +1,7 @@
 package lk.sliit.yummyeats.Model;
 
 public class Food {
+    private String id;
     private String name;
     private String description;
     private String price;
@@ -8,6 +9,22 @@ public class Food {
     private String image;
     private String restaurantMobile;
     private String restaurant;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getRestaurantMobile() {
+        return restaurantMobile;
+    }
+
+    public void setRestaurantMobile(String restaurantMobile) {
+        this.restaurantMobile = restaurantMobile;
+    }
 
     public Food() {
     }

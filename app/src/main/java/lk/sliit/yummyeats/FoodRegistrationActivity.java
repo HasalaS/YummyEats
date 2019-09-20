@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.Image;
 import android.net.Uri;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -80,8 +81,6 @@ public class FoodRegistrationActivity extends AppCompatActivity implements View.
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(FoodRegistrationActivity.this, RestaurantMainActivity.class);
-        startActivity(intent);
         finish();
     }
 
@@ -144,6 +143,17 @@ public class FoodRegistrationActivity extends AppCompatActivity implements View.
                     mBuilder.setView(mView);
                     AlertDialog dialog = mBuilder.create();
                     dialog.show();
+
+                    // Delay two seconds for AlertDialog and return to the home page
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            onBackPressed();
+                        }
+                    }, 2000);
+
+
 
                 }
             }).addOnFailureListener(new OnFailureListener() {

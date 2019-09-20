@@ -1,18 +1,26 @@
 package lk.sliit.yummyeats.ui.main;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.squareup.picasso.Picasso;
-
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-
+import lk.sliit.yummyeats.FoodProfileActivity;
 import lk.sliit.yummyeats.Model.Food;
 import lk.sliit.yummyeats.R;
 
@@ -34,6 +42,7 @@ public class CustomFirebaseAdapter extends RecyclerView.Adapter<CustomFirebaseAd
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder customViewHolder, int position) {
+        customViewHolder.id.setText(foodList.get(position).getId());
         customViewHolder.name.setText(foodList.get(position).getName());
         customViewHolder.restaurant.setText(foodList.get(position).getRestaurant());
         customViewHolder.price.setText(foodList.get(position).getPrice());
@@ -48,17 +57,64 @@ public class CustomFirebaseAdapter extends RecyclerView.Adapter<CustomFirebaseAd
 
     class CustomViewHolder extends RecyclerView.ViewHolder{
 
-        TextView name, restaurant, price, description;
+        TextView name, restaurant, price, description, id;
         ImageView foodImage;
+        Button btnUpdata, btnDelete;
 
         public CustomViewHolder(View itemView){
             super(itemView);
+            id = itemView.findViewById(R.id.food_card_id);
             name = itemView.findViewById(R.id.res_food_card_name);
             restaurant = itemView.findViewById(R.id.res_food_card_restaurant);
             price = itemView.findViewById(R.id.res_food_card_price);
             description = itemView.findViewById(R.id.res_food_card_description);
             foodImage = itemView.findViewById(R.id.res_food_card_image);
+            btnUpdata = itemView.findViewById(R.id.res_food_card_btn_update);
+            btnDelete = itemView.findViewById(R.id.res_food_card_btn_delete);
+
+            btnDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);
+                    LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+                    View mView = inflater.inflate(R.layout.dialog_food_delete_confirmation, null);
+                    mBuilder.setView(mView);
+                    AlertDialog dialog = mBuilder.create();
+                    dialog.show();
+                }
+            });
+
+            btnUpdata.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    try {
+                        // Converting image to byte array
+                        Drawable drawable = foodImage.getDrawable();
+                        Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                        byte[] byteImage = baos.toByteArray();
+
+                        Intent intent = new Intent(context, FoodProfileActivity.class);
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("ID", id.getText().toString());
+                        bundle.putString("NAME", name.getText().toString());
+                        bundle.putString("RESTAURANT", restaurant.getText().toString());
+                        bundle.putString("PRICE", price.getText().toString());
+                        bundle.putString("DESCRIPTION", description.getText().toString());
+                        bundle.putString("CATEGORY", "Food");
+                        bundle.putByteArray("IMAGE", byteImage);
+
+                        intent.putExtras(bundle);
+                        context.startActivity(intent);
+                        ((Activity)context).finish();
+                    } catch (Exception exc){
+                        Toast.makeText(context, "Please wait until fetching data", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
         }
     }
-
 }

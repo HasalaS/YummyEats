@@ -17,13 +17,14 @@
         android:background="@drawable/profile_first_layer_style">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_fp_foodImage"
             android:layout_width="@dimen/profile_circle_view_width"
             android:layout_height="@dimen/profile_circle_view_height"
             android:src="@drawable/order2"
             android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/foodHeaderName"
+            android:id="@+id/tb_fp_header_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/profile_name_text_size"
@@ -60,7 +61,6 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
-                android:onClick="showDialogFood"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -90,6 +90,7 @@
 
                     <!-- Text container-->
                     <LinearLayout
+                        android:onClick="showDialogFood"
                         android:layout_width="0dp"
                         android:layout_weight="4"
                         android:layout_height="match_parent"
@@ -125,7 +126,6 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
-                android:onClick="showDialogFood"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -155,6 +155,7 @@
 
                     <!-- Text container-->
                     <LinearLayout
+                        android:onClick="showDialogFood"
                         android:layout_width="0dp"
                         android:layout_weight="4"
                         android:layout_height="match_parent"
@@ -190,7 +191,6 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
-                android:onClick="showDialogFood"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -220,6 +220,7 @@
 
                     <!-- Text container-->
                     <LinearLayout
+                        android:onClick="showDialogFood"
                         android:layout_width="0dp"
                         android:layout_weight="4"
                         android:layout_height="match_parent"
@@ -255,7 +256,6 @@
                 app:cardBackgroundColor="@android:color/white"
                 app:cardElevation="1dp"
                 app:cardCornerRadius="0dp"
-                android:onClick="showDialogFood"
                 app:cardUseCompatPadding="true">
 
                 <!-- details container-->
@@ -285,6 +285,7 @@
 
                     <!-- Text container-->
                     <LinearLayout
+                        android:onClick="showDialogFood"
                         android:layout_width="0dp"
                         android:layout_weight="4"
                         android:layout_height="match_parent"

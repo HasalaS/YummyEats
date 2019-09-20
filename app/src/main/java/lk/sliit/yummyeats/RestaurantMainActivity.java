@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import lk.sliit.yummyeats.Model.Food;
 import lk.sliit.yummyeats.ui.main.CustomFirebaseAdapter;
 
-public class RestaurantMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class RestaurantMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //Init Firebase
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -69,11 +69,19 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         foodArrayList = new ArrayList<Food>();
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
         table_food.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot dSnapshot: dataSnapshot.getChildren()){
                     Food food = dSnapshot.getValue(Food.class);
+                    food.setId(dSnapshot.getKey());
                     foodArrayList.add(food);
                 }
 
@@ -86,13 +94,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
                 Toast.makeText(RestaurantMainActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-
     }
 
     boolean doubleBackToExitPressedOnce = false;
@@ -143,7 +144,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -166,8 +166,4 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
         return true;
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }
