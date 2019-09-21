@@ -22,11 +22,6 @@
             android:background="@drawable/loadingfood" />
 
         <TextView
-            android:id="@+id/food_card_id"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-
-        <TextView
             android:id="@+id/res_food_card_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,10 +62,16 @@
             android:orientation="horizontal"
             android:layout_gravity="end">
 
+            <TextView
+                android:id="@+id/food_card_id"
+                android:layout_width="0dp"
+                android:layout_weight="0"
+                android:layout_height="match_parent" />
+
             <Button
                 android:id="@+id/res_food_card_btn_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:paddingHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Delete"
@@ -89,6 +90,8 @@
                 android:textColor="@android:color/white"
                 android:background="@drawable/btn_primary_style"
                 android:layout_gravity="end" />
+
+
 
         </LinearLayout>
 

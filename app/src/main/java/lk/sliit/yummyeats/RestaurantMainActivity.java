@@ -40,7 +40,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
 
     RecyclerView recyclerView;
     ArrayList<Food> foodArrayList;
-    CustomFirebaseAdapter customFirebaseAdapter;
+    public static CustomFirebaseAdapter customFirebaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +94,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
                 Toast.makeText(RestaurantMainActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     boolean doubleBackToExitPressedOnce = false;

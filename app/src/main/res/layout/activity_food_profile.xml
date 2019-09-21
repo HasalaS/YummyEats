@@ -314,6 +314,28 @@
 
             </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="1dp"
+                app:cardCornerRadius="0dp"
+                app:cardUseCompatPadding="true">
+
+                <Button
+                    android:id="@+id/btn_food_profile_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:background="@color/colorPrimary"/>
+
+
+            </android.support.v7.widget.CardView>
+
+
+
         </LinearLayout>
 
     </ScrollView>

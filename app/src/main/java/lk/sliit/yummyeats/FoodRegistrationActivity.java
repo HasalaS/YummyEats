@@ -81,6 +81,8 @@ public class FoodRegistrationActivity extends AppCompatActivity implements View.
 
     @Override
     public void onBackPressed() {
+        Intent intent = new Intent(FoodRegistrationActivity.this, RestaurantMainActivity.class);
+        startActivity(intent);
         finish();
     }
 

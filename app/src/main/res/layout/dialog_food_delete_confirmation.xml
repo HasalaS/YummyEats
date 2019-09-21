@@ -42,7 +42,7 @@
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin">
 
             <Button
-                android:id="@+id/btn_res_signIn"
+                android:id="@+id/btn_delete_food_cancel"
                 android:textSize="@dimen/text_level_3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -53,7 +53,7 @@
                 android:layout_marginRight="2dp"/>
 
             <Button
-                android:id="@+id/btn_res_signUp"
+                android:id="@+id/btn_delete_food_delete"
                 android:textSize="@dimen/text_level_3"
                 android:layout_width="0dp"
                 android:layout_weight="1"

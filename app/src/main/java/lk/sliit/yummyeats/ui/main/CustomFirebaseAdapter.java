@@ -17,6 +17,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -28,6 +34,10 @@ public class CustomFirebaseAdapter extends RecyclerView.Adapter<CustomFirebaseAd
 
     Context context;
     ArrayList<Food> foodList;
+
+    //Init Firebase
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference table_food = database.getReference("Food");
 
     public CustomFirebaseAdapter(Context cntx, ArrayList<Food> foods){
         context = cntx;
@@ -75,12 +85,56 @@ public class CustomFirebaseAdapter extends RecyclerView.Adapter<CustomFirebaseAd
             btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    Button btnCancel, btnDelete;
+                    final ViewGroup foodCard = (ViewGroup) v.getParent();
+
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);
                     LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
                     View mView = inflater.inflate(R.layout.dialog_food_delete_confirmation, null);
+
+                    btnCancel = mView.findViewById(R.id.btn_delete_food_cancel);
+                    btnDelete = mView.findViewById(R.id.btn_delete_food_delete);
+
                     mBuilder.setView(mView);
-                    AlertDialog dialog = mBuilder.create();
+                    final AlertDialog dialog = mBuilder.create();
                     dialog.show();
+
+                    btnCancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    btnDelete.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            // remove record from firebaser realtime database
+                            table_food.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    TextView tvID = (TextView) foodCard.getChildAt(0);
+
+                                    if(dataSnapshot.hasChild(tvID.getText().toString())){
+                                        table_food.child(tvID.getText().toString()).removeValue();
+                                        dialog.dismiss();
+                                        Toast.makeText(context, "Food Item Deleted", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+                                    Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                        }
+                    });
                 }
             });
 
