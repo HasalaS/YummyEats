@@ -98,6 +98,7 @@ public class CustomerMainActivity extends AppCompatActivity
         } else if (id == R.id.nav_customer_profile) {
             Intent intent = new Intent(this, CustomerProfileActivity.class);
             startActivity(intent);
+            finish();
 
         } else if (id == R.id.nav_customer_settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
