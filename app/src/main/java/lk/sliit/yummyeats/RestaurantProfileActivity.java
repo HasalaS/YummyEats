@@ -29,6 +29,7 @@ public class RestaurantProfileActivity extends AppCompatActivity {
     final DatabaseReference table_restaurant = database.getReference("Restaurant");
 
     TextView tvResName, tvResEmail, tvResMobile, tvResMobileHeader, tvResAddress, hResName, hResEmail;
+    Button btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,80 +64,12 @@ public class RestaurantProfileActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-     /*   btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Button btnCancel, btnDelete;
-
-                AlertDialog.Builder mBuilder = new AlertDialog.Builder(RestaurantProfileActivity.this);
-                LayoutInflater inflater = (LayoutInflater) getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-                View mView = inflater.inflate(R.layout.dialog_restaurant_delete_confirmation, null);
-
-                btnCancel = findViewById(R.id.btn_restaurant_cancel);
-                btnDelete = findViewById(R.id.btn_restaurant_delete);
-
-                mBuilder.setView(mView);
-                final AlertDialog dialog = mBuilder.create();
-                dialog.show();
-
-                btnCancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-
-                btnDelete.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        table_restaurant.addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                if (dataSnapshot.hasChild(SessionUser.restaurant.getMobile().toLowerCase())){
-                                    table_restaurant.child(SessionUser.restaurant.getMobile().toLowerCase()).removeValue();
-                                    dialog.dismiss();
-                                    Toast.makeText(RestaurantProfileActivity.this,"Profile deleted successfully!", Toast.LENGTH_SHORT).show();
-
-                                    SessionUser.restaurant = null;
-                                    Intent intent = new Intent(RestaurantProfileActivity.this, RegisterActivity.class);
-                                    startActivity(intent);
-                                }
-                                else {
-                                    Toast.makeText(RestaurantProfileActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-                                Toast.makeText(RestaurantProfileActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
-
-                            }
-                        });
-                    }
-                });
-            }
-        });*/
     }
 
 
 
 
     public void showDialogRestaurant(View view){
-
-        tvResMobileHeader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(RestaurantProfileActivity.this, "Cannot Update Mobile No!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tvResMobile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(RestaurantProfileActivity.this, "Cannot Update Mobile No!", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         TextView tvKey = null;
         TextView tvValue = null;
@@ -157,8 +90,6 @@ public class RestaurantProfileActivity extends AppCompatActivity {
         TextView updateTvKey = (TextView) viewGroup.getChildAt(0);
         final EditText updateEtValue = (EditText) viewGroup.getChildAt(1);
         Button updateBtn = (Button) viewGroup.getChildAt(2);
-
-
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
