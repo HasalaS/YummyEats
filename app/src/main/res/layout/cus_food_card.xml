@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/res_food_card_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/loadingfood" />
+
+        <TextView
+            android:id="@+id/res_food_card_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chicken Berger"
+            android:textSize="28sp"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/res_food_card_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Awanhala Restaurent, Malabe"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/res_food_card_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rs. 460.00"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="10dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/res_food_card_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Awanhala's Chiken burgers are seasoned with salt and ground pepper which is served by roasted chiken,It is also sold as double or triple burger."
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end">
+
+            <TextView
+                android:id="@+id/food_card_id"
+                android:layout_width="0dp"
+                android:layout_weight="0"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/res_food_card_btn_delete"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Delete"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/btn_secondary_style"
+                android:layout_gravity="end"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+            <Button
+                android:id="@+id/res_food_card_btn_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Order Now!"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_primary_style"
+                android:layout_gravity="end" />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

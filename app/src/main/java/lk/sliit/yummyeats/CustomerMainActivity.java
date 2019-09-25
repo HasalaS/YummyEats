@@ -1,6 +1,7 @@
 package lk.sliit.yummyeats;
 
 import lk.sliit.yummyeats.Model.Restaurant;
+import lk.sliit.yummyeats.Model.SessionUser;
 import lk.sliit.yummyeats.ui.main.CustomPageAdapter;
 import lk.sliit.yummyeats.ui.main.SectionsPagerAdapter;
 
@@ -19,7 +20,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CustomerMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

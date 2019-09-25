@@ -117,7 +117,6 @@
                             android:id="@+id/tv_del_profile_card_name_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text=""
                             android:textSize="@dimen/profile_field_value"
                             android:textColor="@color/colorPrimaryText"/>
 
@@ -331,8 +330,8 @@
                 android:text="@string/Delete_Your_profile"
                 android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"
-                android:background="@color/colorPrimary"
-                android:textColor="@color/colorSecondaryText" />
+                android:background="@drawable/btn_secondary_style"
+                android:textColor="@color/colorWorning"  />
 
         </LinearLayout>
 
