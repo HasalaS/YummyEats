@@ -63,6 +63,56 @@ public class RestaurantProfileActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button btnCancel, btnDelete;
+
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(RestaurantProfileActivity.this);
+                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View mView = inflater.inflate(R.layout.dialog_restaurant_delete_confirmation, null);
+
+                btnCancel = mView.findViewById(R.id.btn_restaurant_cancel);
+                btnDelete = mView.findViewById(R.id.btn_restaurant_delete);
+
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
+                dialog.show();
+
+                btnCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                btnDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Delete profile from DB
+                        table_restaurant.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.hasChild(SessionUser.restaurant.getMobile())){
+                                    table_restaurant.child(SessionUser.restaurant.getMobile()).removeValue();
+                                    dialog.dismiss();
+                                    Toast.makeText(RestaurantProfileActivity.this, "Profile deleted successfully!", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(RestaurantProfileActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                Toast.makeText(RestaurantProfileActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
     }
 
     public void showDialogRestaurant(View view){
