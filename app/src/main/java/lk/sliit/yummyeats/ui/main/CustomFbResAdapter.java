@@ -35,36 +35,17 @@ public class CustomFbResAdapter extends RecyclerView.Adapter<CustomFbResAdapter.
     Context context;
     ArrayList<Food> foodList;
 
-    //Init Firebase
+    //Initialize Firebase and get reference to the Food Node
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference table_food = database.getReference("Food");
 
+    // Constructor
     public CustomFbResAdapter(Context cntx, ArrayList<Food> foods){
         context = cntx;
         foodList = foods;
     }
 
-    @NonNull
-    @Override
-    public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new CustomViewHolder(LayoutInflater.from(context).inflate(R.layout.restaurent_card, parent, false));
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder customViewHolder, int position) {
-        customViewHolder.id.setText(foodList.get(position).getId());
-        customViewHolder.name.setText(foodList.get(position).getName());
-        customViewHolder.restaurant.setText(foodList.get(position).getRestaurant());
-        customViewHolder.price.setText(foodList.get(position).getPrice());
-        customViewHolder.description.setText(foodList.get(position).getDescription());
-        Picasso.get().load(foodList.get(position).getImage()).into(customViewHolder.foodImage);
-    }
-
-    @Override
-    public int getItemCount() {
-        return foodList.size();
-    }
-
+    // Inner class that
     class CustomViewHolder extends RecyclerView.ViewHolder{
 
         TextView name, restaurant, price, description, id;
@@ -111,7 +92,7 @@ public class CustomFbResAdapter extends RecyclerView.Adapter<CustomFbResAdapter.
                         @Override
                         public void onClick(View v) {
 
-                            // remove record from firebaser realtime database
+                            // remove record from Firebase realtime database
                             table_food.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -169,5 +150,29 @@ public class CustomFbResAdapter extends RecyclerView.Adapter<CustomFbResAdapter.
                 }
             });
         }
+    }
+
+    // Create a view holder and adding food card layout
+    @NonNull
+    @Override
+    public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new CustomViewHolder(LayoutInflater.from(context).inflate(R.layout.restaurent_card, parent, false));
+    }
+
+    // Set values to food card layout
+    @Override
+    public void onBindViewHolder(@NonNull CustomViewHolder customViewHolder, int position) {
+        customViewHolder.id.setText(foodList.get(position).getId());
+        customViewHolder.name.setText(foodList.get(position).getName());
+        customViewHolder.restaurant.setText(foodList.get(position).getRestaurant());
+        customViewHolder.price.setText(foodList.get(position).getPrice());
+        customViewHolder.description.setText(foodList.get(position).getDescription());
+        Picasso.get().load(foodList.get(position).getImage()).into(customViewHolder.foodImage);
+    }
+
+    // Getting item count
+    @Override
+    public int getItemCount() {
+        return foodList.size();
     }
 }

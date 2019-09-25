@@ -20,11 +20,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class CustomerMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -39,6 +37,14 @@ public class CustomerMainActivity extends AppCompatActivity
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUserName = headerView.findViewById(R.id.cus_nav_header_name);
+        TextView navUserEmail = headerView.findViewById(R.id.cus_nav_header_email);
+
+        navUserName.setText(SessionUser.customer.getName());
+        navUserEmail.setText(SessionUser.customer.getEmail());
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -57,6 +63,7 @@ public class CustomerMainActivity extends AppCompatActivity
 
         viewPager.setAdapter(adapter);
         tabs.setupWithViewPager(viewPager);
+
     }
 
     boolean doubleBackToExitPressedOnce = false;

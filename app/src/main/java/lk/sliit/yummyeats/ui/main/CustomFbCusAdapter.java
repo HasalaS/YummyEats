@@ -1,24 +1,13 @@
 package lk.sliit.yummyeats.ui.main;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-public class CustomFbCusAdapter  extends RecyclerView.Adapter<CustomFbResAdapter.CustomViewHolder> {
+import java.util.ArrayList;
 
-    @NonNull
-    @Override
-    public CustomFbResAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
-    }
+public class CustomFbCusAdapter {
 
-    @Override
-    public void onBindViewHolder(@NonNull CustomFbResAdapter.CustomViewHolder customViewHolder, int i) {
 
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
 }
