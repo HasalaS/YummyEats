@@ -40,7 +40,7 @@ public class DeliveryProfileActivity extends AppCompatActivity {
 
         tvDelVehicleNo = findViewById(R.id.tv_del_profile_card_vehicle_no_value);
         tvDelVehicleNo.setText(SessionUser.deliver.getVehicleNo());
-
+//del
         hDelName = findViewById(R.id.delHeaderName);
         hDelName.setText(SessionUser.deliver.getName());
 
