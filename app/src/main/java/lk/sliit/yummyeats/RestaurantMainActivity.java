@@ -31,7 +31,7 @@ import lk.sliit.yummyeats.ui.main.CustomFbResAdapter;
 
 public class RestaurantMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    //Init Firebase
+    //Init Firebase Database
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference table_food = database.getReference("Food");
 
