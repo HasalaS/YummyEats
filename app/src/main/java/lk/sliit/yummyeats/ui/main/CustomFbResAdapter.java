@@ -152,6 +152,12 @@ public class CustomFbResAdapter extends RecyclerView.Adapter<CustomFbResAdapter.
         }
     }
 
+    public void clear(){
+        int size = foodList.size();
+        foodList.clear();
+        notifyItemChanged(0, size);
+    }
+
     // Create a view holder and adding food card layout
     @NonNull
     @Override

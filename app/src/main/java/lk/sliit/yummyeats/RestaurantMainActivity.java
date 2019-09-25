@@ -16,6 +16,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +40,9 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
     RecyclerView recyclerView;
     ArrayList<Food> foodArrayList;
     public static CustomFbResAdapter customFbResAdapter;
+
+    EditText etSearchBar;
+    Button btnSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +71,32 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         foodArrayList = new ArrayList<Food>();
 
+        etSearchBar = findViewById(R.id.et_search_key);
+        btnSearch = findViewById(R.id.btn_search);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        loadIntoRecycleView(null);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                loadIntoRecycleView(etSearchBar.getText().toString());
+            }
+        });
+
+    }
+
+    private void loadIntoRecycleView(final String key){
 
         table_food.addValueEventListener(new ValueEventListener() {
             @Override
@@ -81,7 +106,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
                     food.setId(dSnapshot.getKey());
                     foodArrayList.add(food);
                 }
-
                 customFbResAdapter = new CustomFbResAdapter(RestaurantMainActivity.this, foodArrayList);
                 recyclerView.setAdapter(customFbResAdapter);
             }
@@ -91,7 +115,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
                 Toast.makeText(RestaurantMainActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     boolean doubleBackToExitPressedOnce = false;
