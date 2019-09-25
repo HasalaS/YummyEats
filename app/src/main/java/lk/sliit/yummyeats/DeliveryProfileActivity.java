@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -52,8 +54,35 @@ public class DeliveryProfileActivity extends AppCompatActivity {
     }
 
     public void showDialogDeliver(View view){
-        AlertDialog.Builder mBuilder = new AlertDialog.Builder(DeliveryProfileActivity.this);
+        TextView tvKey = null;
+        TextView tvValue = null;
+
+        ViewGroup card = (ViewGroup) view;
+        tvKey = (TextView) card.getChildAt(0);
+        tvValue = (TextView) card.getChildAt(1);
+        final String key = tvKey.getText().toString();
+        final String value = tvValue.getText().toString();
+
+        final AlertDialog.Builder mBuilder = new AlertDialog.Builder(DeliveryProfileActivity.this);
         View mView = getLayoutInflater().inflate(R.layout.dialog_update, null);
+
+        ViewGroup vg = (ViewGroup)mView;
+        ViewGroup viewGroup = (ViewGroup) vg.getChildAt(0);
+
+        TextView updateTvKey = (TextView) viewGroup.getChildAt(0);
+        final EditText updateEtValue = (EditText) viewGroup.getChildAt(1);
+        final Button updateBtn = (Button) viewGroup.getChildAt(2);
+
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        updateTvKey.setText(key);
+        updateEtValue.setText(value);
+
         mBuilder.setView(mView);
         AlertDialog dialog = mBuilder.create();
         dialog.show();
