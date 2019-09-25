@@ -1,11 +1,9 @@
 package lk.sliit.yummyeats;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -18,7 +16,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -30,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import lk.sliit.yummyeats.Model.Food;
-import lk.sliit.yummyeats.ui.main.CustomFirebaseAdapter;
+import lk.sliit.yummyeats.ui.main.CustomFbResAdapter;
 
 public class RestaurantMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,7 +37,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
 
     RecyclerView recyclerView;
     ArrayList<Food> foodArrayList;
-    public static CustomFirebaseAdapter customFirebaseAdapter;
+    public static CustomFbResAdapter customFbResAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,8 +82,8 @@ public class RestaurantMainActivity extends AppCompatActivity implements Navigat
                     foodArrayList.add(food);
                 }
 
-                customFirebaseAdapter = new CustomFirebaseAdapter(RestaurantMainActivity.this, foodArrayList);
-                recyclerView.setAdapter(customFirebaseAdapter);
+                customFbResAdapter = new CustomFbResAdapter(RestaurantMainActivity.this, foodArrayList);
+                recyclerView.setAdapter(customFbResAdapter);
             }
 
             @Override

@@ -30,7 +30,7 @@ import lk.sliit.yummyeats.FoodProfileActivity;
 import lk.sliit.yummyeats.Model.Food;
 import lk.sliit.yummyeats.R;
 
-public class CustomFirebaseAdapter extends RecyclerView.Adapter<CustomFirebaseAdapter.CustomViewHolder> {
+public class CustomFbResAdapter extends RecyclerView.Adapter<CustomFbResAdapter.CustomViewHolder> {
 
     Context context;
     ArrayList<Food> foodList;
@@ -39,7 +39,7 @@ public class CustomFirebaseAdapter extends RecyclerView.Adapter<CustomFirebaseAd
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference table_food = database.getReference("Food");
 
-    public CustomFirebaseAdapter(Context cntx, ArrayList<Food> foods){
+    public CustomFbResAdapter(Context cntx, ArrayList<Food> foods){
         context = cntx;
         foodList = foods;
     }
@@ -132,7 +132,6 @@ public class CustomFirebaseAdapter extends RecyclerView.Adapter<CustomFirebaseAd
                                     Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
                                 }
                             });
-
                         }
                     });
                 }
