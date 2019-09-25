@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_error_outline_black_24dp"/>
+
+        <TextView
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_deliver_delete_main"
+            android:textSize="@dimen/text_level_1"
+            android:textColor="@android:color/holo_red_dark"/>
+
+        <TextView
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_delete_secondary"
+            android:textSize="@dimen/text_level_3"
+            android:textColor="@color/colorPrimaryText"/>
+
+
+        <LinearLayout
+            android:layout_marginVertical="@dimen/nav_header_vertical_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin">
+
+            <Button
+                android:id="@+id/btn_deliver_cancel"
+                android:textSize="@dimen/text_level_3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_secondary_style"
+                android:textColor="@color/colorAccent"
+                android:text="@string/btnCancel"
+                android:layout_marginRight="2dp"/>
+
+            <Button
+                android:id="@+id/btn_deliver_delete"
+                android:textSize="@dimen/text_level_3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_worning_style"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/btnDelete"
+                android:layout_marginLeft="2dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -79,7 +79,7 @@
     <string name="profile_address">Address</string>
 
     <string name="deliver_profile_title">Deliver Profile</string>
-    <string name="delivery_profile_vehicle_no">Vehicle No</string>
+    <string name="delivery_profile_vehicle_no">vehicleNo</string>
 
     <string name="restaurant_profile_title">Restaurant Profile</string>
 
@@ -107,6 +107,11 @@
 
     <string name="dialog_delete">Do you want to delete this food item?</string>
     <string name="dialog_delete_text">If your delete, Food item will be removed from the system.</string>
+
+    <string name="dialog_customer_delete_main">Do you want to delete your customer profile?</string>
+    <string name="dialog_deliver_delete_main">Do you want to delete your deliver profile?</string>
+    <string name="dialog_restaurant_delete_main">Do you want to delete your restaurant profile?</string>
+    <string name="dialog_delete_secondary">If you delete, Your profile will be removed from the system.</string>
     <string name="btnCancel">Cancel</string>
     <string name="btnDelete">Delete</string>
 
