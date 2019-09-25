@@ -29,7 +29,6 @@ public class RestaurantProfileActivity extends AppCompatActivity {
     final DatabaseReference table_restaurant = database.getReference("Restaurant");
 
     TextView tvResName, tvResEmail, tvResMobile, tvResMobileHeader, tvResAddress, hResName, hResEmail;
-    Button btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
