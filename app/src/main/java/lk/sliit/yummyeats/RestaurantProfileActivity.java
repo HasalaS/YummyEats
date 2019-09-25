@@ -59,15 +59,11 @@ public class RestaurantProfileActivity extends AppCompatActivity {
         btnDelete = findViewById(R.id.btn_res_profile_delete);
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
 
     }
-
-
-
 
     public void showDialogRestaurant(View view){
 
